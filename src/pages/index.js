@@ -93,9 +93,7 @@ const Home = ({ data, projects, review }) => {
                   <h2 className="card-title mx-auto">{project.title}</h2>
                   <p>{project.descriptions}</p>
                   <div className="card-actions justify-center">
-                    <button className="btn btn-primary text-white">
-                      contact now
-                    </button>
+                  <button className="btn btn-primary text-white"><Link href={"/components/ContactUs"}>Contact_Us to Get</Link></button>
                   </div>
                 </div>
               </div>
