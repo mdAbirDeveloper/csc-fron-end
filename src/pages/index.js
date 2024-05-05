@@ -46,7 +46,7 @@ const Home = ({ data, projects, review }) => {
           Step into a world of clarity with our Fog and Mist Services – where
           every droplet brings a touch of enchantment !
         </h1>
-        <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-1">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
           {data?.map((product) => (
             <>
               <div>
@@ -82,7 +82,7 @@ const Home = ({ data, projects, review }) => {
         <h1 className="py-5 text-4xl text-center font-bold my-10">
           Here are our previous projects
         </h1>
-        <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-between">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-between">
           {projects?.map((project) => (
             <>
               <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-5 hover:bg-yellow-500 hover:text-white">
