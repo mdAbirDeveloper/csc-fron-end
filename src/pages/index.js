@@ -42,7 +42,7 @@ const Home = ({ data, projects, review }) => {
       {/* start product section  */}
 
       <div>
-        <h1 className="text-center my-6 font-bold text-4xl  w-3/4 mx-auto py-2">
+        <h1 className="text-center my-6 font-bold xl:text-4xl md:text-3xl text-2xl w-3/4 mx-auto py-2">
           Step into a world of clarity with our Fog and Mist Services – where
           every droplet brings a touch of enchantment !
         </h1>

@@ -8,7 +8,7 @@ const Products = ({ data }) => {
     <div>
       <div>
         <h1 className="text-center my-6 font-bold xl:text-4xl md:text-3xl text-2xl xl:w-3/4 md:w-3/4 w-full mx-auto py-2">
-          Step into a world of clarity with our Fog and Mist Services – where
+          Step into a world of clarity with our Fog and Mist Services, where
           every droplet brings a touch of enchantment !
         </h1>
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
