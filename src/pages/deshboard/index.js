@@ -5,7 +5,7 @@ import DeshboardLayout from './DeshboardLayout';
 const index = () => {
   return (
     <div>
-        <h1>this is deshboard</h1>
+        <h1 className='text-4xl mx-auto text-center my-40 uppercase font-bold text-green-400'>this is dashboard</h1>
     </div>
   )
 }

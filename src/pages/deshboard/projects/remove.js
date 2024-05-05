@@ -23,7 +23,7 @@ const remove = ({data}) => {
   return (
     <div>
       <div className="">
-        this is remove
+        <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500"> remove youre projects</h1>
         {data.map((projects) => (
           <>
             <div className="grid grid-cols-3 justify-between bg-indigo-100 mb-5 w-2/4 mx-auto">
