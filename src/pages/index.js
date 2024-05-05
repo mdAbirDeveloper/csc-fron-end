@@ -1,118 +1,177 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Link from "next/link";
+// import About from "../components/About";
+// import ContactUs from "../components/ContactUs";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+/* eslint-disable @next/next/no-img-element */
+const Home = ({ data, projects, review }) => {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div
+        className="hero min-h-screen"
+        style={{
+          backgroundImage:
+            "url(https://png.pngtree.com/background/20230425/original/pngtree-lake-with-mist-in-it-sits-in-the-mountains-picture-image_2479566.jpg)",
+        }}
+      >
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="">
+            <h1 className="mb-5 lg:text-5xl text-2xl font-bold text-white w-full">
+              Embrace the Mystique <br></br> Discover Our Fog & Mist Services
+              Today!
+            </h1>
+            <p className="mb-5 text-white">
+              Experience the enchantment of fog and mist like never before with
+              our specialized services. Whether you are seeking to enhance the
+              ambiance of your landscape, create stunning visual effects, or add
+              a touch of magic to your event, our dedicated team is here to
+              bring your vision to life. With a focus on quality, innovation,
+              and customer satisfaction, we pride ourselves on delivering
+              exceptional results that exceed expectations. Join us on a journey
+              into the ethereal world of fog and mist, where every moment is an
+              opportunity to create unforgettable memories. Explore our services
+              today and let us turn your dreams into reality.
+            </p>
+            <button className="btn btn-primary text-white hover:bg-green-600">
+              Get Started
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* start product section  */}
+
+      <div>
+        <h1 className="text-center my-6 font-bold text-4xl  w-3/4 mx-auto py-2">
+          Step into a world of clarity with our Fog and Mist Services – where
+          every droplet brings a touch of enchantment !
+        </h1>
+        <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-1">
+          {data?.map((product) => (
+            <>
+              <div>
+                <div className="card w-96 bg-base-100 shadow-xl mb-6 mx-auto hover:bg-slate-500 hover:text-white">
+                  <figure className="px-10 pt-10">
+                    <img
+                      key={product?._id}
+                      src={product?.image}
+                      alt="Shoes"
+                      className="rounded-xl"
+                    />
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    <h2 className="card-title">{product?.title}</h2>
+                    <p>{product.descriptions}</p>
+                    <div className="card-actions">
+                      <button className="btn btn-primary text-white">
+                        <Link href={"/components/ContactUs"}>Contact_Us</Link>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
+      </div>
+      {/* end product section */}
+
+      {/* start projects section  */}
+
+      <div>
+        <h1 className="py-5 text-4xl text-center font-bold my-10">
+          Here are our previous projects
+        </h1>
+        <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-between">
+          {projects?.map((project) => (
+            <>
+              <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-5 hover:bg-yellow-500 hover:text-white">
+                <figure>
+                  <img key={project?._id} src={project.image} alt="Shoes" />
+                </figure>
+                <div className="card-body text-center">
+                  <h2 className="card-title mx-auto">{project.title}</h2>
+                  <p>{project.descriptions}</p>
+                  <div className="card-actions justify-center">
+                    <button className="btn btn-primary text-white">
+                      contact now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* end project section  */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* start review section  */}
+      <div className="text-center">
+        <h1 className="py-5 text-4xl text-center font-bold my-10">
+          What Our Clients Say
+        </h1>
+        <div className="carousel carousel-center w-4/5 mx-auto p-4 space-x-4 bg-neutral rounded-box">
+          <div className="carousel-item">
+            <div className="flex">
+              {review?.map((reviews) => (
+                <>
+                  <div className="card xl:w-96 md:w-96 w-80 bg-base-100 shadow-xl mx-auto mb-5 ml-5">
+                    <div className="flex justify-around">
+                      <div className="avatar">
+                        <div className="w-24 rounded-full">
+                          <img key={reviews?._id} src={reviews?.image} />
+                        </div>
+                        <h1 className="my-auto ml-3 font-bold">
+                          {reviews?.name}
+                        </h1>
+                      </div>
+                      <span className="my-auto text-yellow-400 text-2xl ">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                      </span>
+                    </div>
+                    <div className="card-body text-left">
+                      <p>{reviews?.review}</p>
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+      {/* end review section  */}
+
+      <br></br>
+      {/* <About></About>
+      <br></br>
+      <br></br>
+      <ContactUs></ContactUs>
+      <br></br>
+      <br></br> */}
+    </div>
   );
-}
+};
+
+export default Home;
+
+export const getServerSideProps = async () => {
+  // Fetch data from an API
+  const res = await fetch("https://csc-server.vercel.app/products");
+  const data = await res.json();
+
+  const respons = await fetch("https://csc-server.vercel.app/projects");
+  const projects = await respons.json();
+
+  const reviewRespons = await fetch("https://csc-server.vercel.app/review");
+  const review = await reviewRespons.json();
+
+  // Pass the fetched data as props to the component
+  return {
+    props: {
+      data,
+      projects,
+      review,
+    },
+  };
+};
