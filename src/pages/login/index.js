@@ -24,7 +24,7 @@ export default function Login() {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-blue-200 w-3/4 mx-auto rounded-xl">
+      <div className="hero min-h-screen bg-blue-200 xl:w-3/4 md:w-3/4 w-full mx-auto rounded-xl">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>

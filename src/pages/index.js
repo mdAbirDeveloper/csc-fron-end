@@ -7,7 +7,7 @@ const Home = ({ data, projects, review }) => {
   return (
     <div>
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen sm:w-full"
         style={{
           backgroundImage:
             "url(https://png.pngtree.com/background/20230425/original/pngtree-lake-with-mist-in-it-sits-in-the-mountains-picture-image_2479566.jpg)",
