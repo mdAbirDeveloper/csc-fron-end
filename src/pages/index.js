@@ -1,4 +1,6 @@
 import Link from "next/link";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 // import About from "../components/About";
 // import ContactUs from "../components/ContactUs";
 
@@ -33,7 +35,7 @@ const Home = ({ data, projects, review }) => {
               today and let us turn your dreams into reality.
             </p>
             <button className="btn btn-primary text-white hover:bg-green-600">
-              Get Started
+              <Link href={'/components/ContactUs'}>Get Started</Link>
             </button>
           </div>
         </div>
@@ -50,7 +52,7 @@ const Home = ({ data, projects, review }) => {
           {data?.map((product) => (
             <>
               <div>
-                <div className="card w-96 bg-base-100 shadow-xl mb-6 mx-auto hover:bg-slate-500 hover:text-white">
+                <div className="card xl:w-96 md:w-96 w-80 bg-base-100 shadow-xl mb-6 mx-auto hover:bg-slate-500 hover:text-white">
                   <figure className="px-10 pt-10">
                     <img
                       key={product?._id}
@@ -85,7 +87,7 @@ const Home = ({ data, projects, review }) => {
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-between">
           {projects?.map((project) => (
             <>
-              <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-5 hover:bg-yellow-500 hover:text-white">
+              <div className="card xl:w-96 md:w-96 w-80-base-100 shadow-xl mx-auto mb-5 hover:bg-yellow-500 hover:text-white">
                 <figure>
                   <img key={project?._id} src={project.image} alt="Shoes" />
                 </figure>
@@ -109,12 +111,12 @@ const Home = ({ data, projects, review }) => {
         <h1 className="py-5 text-4xl text-center font-bold my-10">
           What Our Clients Say
         </h1>
-        <div className="carousel carousel-center w-4/5 mx-auto p-4 space-x-4 bg-neutral rounded-box">
+        <div className="carousel carousel-center xl:w-4/5 md:w-4/5 w-full mx-auto p-4 space-x-4 bg-neutral rounded-box">
           <div className="carousel-item">
             <div className="flex">
               {review?.map((reviews) => (
                 <>
-                  <div className="card xl:w-96 md:w-96 w-80 bg-base-100 shadow-xl mx-auto mb-5 ml-5">
+                  <div className="card xl:w-96 md:w-96 w-72 bg-base-100 shadow-xl mx-auto mb-5 ml-5">
                     <div className="flex justify-around">
                       <div className="avatar">
                         <div className="w-24 rounded-full">
@@ -141,12 +143,12 @@ const Home = ({ data, projects, review }) => {
       {/* end review section  */}
 
       <br></br>
-      {/* <About></About>
+      <About></About>
       <br></br>
       <br></br>
       <ContactUs></ContactUs>
       <br></br>
-      <br></br> */}
+      <br></br>
     </div>
   );
 };
