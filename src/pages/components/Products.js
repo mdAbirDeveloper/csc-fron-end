@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Footer from "./Footer";
 
 const Products = ({ data }) => {
   console.log(data);
