@@ -21,7 +21,7 @@ const index = () => {
         formData.append("images", image);
       }
 
-      await fetch("https://csc-server.vercel.app/form", {
+      await fetch("https://csc-server.vercel.app/products", {
         method: "POST",
         body: formData,
       });
