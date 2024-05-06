@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import DeshboardLayout from "../DeshboardLayout";
 import { useForm } from "react-hook-form";
@@ -7,43 +8,28 @@ const index = () => {
     register,
     handleSubmit,
     formState: { errors },
-    // eslint-disable-next-line react-hooks/rules-of-hooks
   } = useForm();
 
   const onSubmit = async (data) => {
-    const image1 = data.firstImage[0];
-    console.log(image1,);
-    const formData = new FormData();
-    formData.append("image", image1,);
-    const url = `https://api.imgbb.com/1/upload?key=d1fbaa0b9f043f285b08e6d997b387ef`;
+    try {
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("description", data.description);
+      
+      // Append each image to formData
+      for (const image of data.images) {
+        formData.append("images", image);
+      }
 
-    //send image on imgbb
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imgdata) => {
-        const product = {
-          title: data.title,
-          descriptions: data.description,
-          image: imgdata.data.url,
-        };
-        console.log(imgdata);
-
-        //send data on mongodb
-        fetch("https://csc-server.vercel.app/products", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(product),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log(result)
-          });
+      await fetch("https://csc-server.vercel.app/form", {
+        method: "POST",
+        body: formData,
       });
+      
+      console.log('Form submitted successfully!');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -58,7 +44,7 @@ const index = () => {
             placeholder="write your product title"
             className="input input-bordered"
             required
-            {...register("title")}
+            {...register("name")}
           />
         </div>
         <div className="form-control">
@@ -72,7 +58,8 @@ const index = () => {
         </div>
         <div>
           <label>chose a image of your product</label>
-          <input type="file" {...register("firstImage")} required />
+          <input type="file" {...register("images", { required: true })} multiple />
+          {errors.images && <span>This field is required</span>}
         </div>
         <div className="form-control mt-6">
           <button

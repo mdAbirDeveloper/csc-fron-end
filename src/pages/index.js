@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
@@ -8,7 +9,7 @@ import ContactUs from "./components/ContactUs";
 const Home = ({ data, projects, review }) => {
   return (
     <div>
-      <div
+      {/* <div
         className="hero min-h-screen sm:w-full"
         style={{
           backgroundImage:
@@ -37,6 +38,40 @@ const Home = ({ data, projects, review }) => {
             <button className="btn btn-primary text-white hover:bg-green-600">
               <Link href={'/components/ContactUs'}>Get Started</Link>
             </button>
+          </div>
+        </div>
+      </div> */}
+
+{/* https://png.pngtree.com/thumb_back/fh260/background/20220216/pngtree-meeting-background-picture-image_933745.jpg */}
+
+      <div className="hero min-h-screen " 
+      style={{
+        backgroundImage:
+          "url(https://t4.ftcdn.net/jpg/07/42/20/79/360_F_742207929_7Jd7UxcLijq5PnjQkMvdSi6VU7WSzMVM.jpg)",
+      }}>
+        <div className="hero-content flex-col lg:flex-row-reverse bg-opacity-60">
+          <img
+            src="/top-left.jpg"
+            className="xl:max-w-lg md:max-w-lg rounded-lg shadow-2xl xl:block md:block hidden"
+          />
+          <div className="xl:text-left md:text-left text-center">
+          <h1 className="mb-5 lg:text-5xl text-2xl font-bold text-white w-full">
+              Embrace the Mystique <br></br> Discover Our Fog & Mist Services
+              Today!
+            </h1>
+            {/* <p className="mb-5 text-blue-400 font-bold">
+              Experience the enchantment of fog and mist like never before with
+              our specialized services. Whether you are seeking to enhance the
+              ambiance of your landscape, create stunning visual effects, or add
+              a touch of magic to your event, our dedicated team is here to
+              bring your vision to life. With a focus on quality, innovation,
+              and customer satisfaction, we pride ourselves on delivering
+              exceptional results that exceed expectations. Join us on a journey
+              into the ethereal world of fog and mist, where every moment is an
+              opportunity to create unforgettable memories. Explore our services
+              today and let us turn your dreams into reality.
+            </p> */}
+            <button className="btn btn-primary text-white">Get Started</button>
           </div>
         </div>
       </div>
@@ -95,7 +130,11 @@ const Home = ({ data, projects, review }) => {
                   <h2 className="card-title mx-auto">{project.title}</h2>
                   <p>{project.descriptions}</p>
                   <div className="card-actions justify-center">
-                  <button className="btn btn-primary text-white"><Link href={"/components/ContactUs"}>Contact_Us to Get</Link></button>
+                    <button className="btn btn-primary text-white">
+                      <Link href={"/components/ContactUs"}>
+                        Contact_Us to Get
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </div>
