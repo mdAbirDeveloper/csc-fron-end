@@ -2,75 +2,26 @@
 import Link from "next/link";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
-// import About from "../components/About";
-// import ContactUs from "../components/ContactUs";
-
-/* eslint-disable @next/next/no-img-element */
 const Home = ({ data, projects, review }) => {
   return (
     <div>
-      {/* <div
-        className="hero min-h-screen sm:w-full"
+      <div
+        className="hero min-h-screen "
         style={{
           backgroundImage:
-            "url(https://png.pngtree.com/background/20230425/original/pngtree-lake-with-mist-in-it-sits-in-the-mountains-picture-image_2479566.jpg)",
+            "url(https://t4.ftcdn.net/jpg/07/42/20/79/360_F_742207929_7Jd7UxcLijq5PnjQkMvdSi6VU7WSzMVM.jpg)",
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="">
-            <h1 className="mb-5 lg:text-5xl text-2xl font-bold text-white w-full">
-              Embrace the Mystique <br></br> Discover Our Fog & Mist Services
-              Today!
-            </h1>
-            <p className="mb-5 text-white">
-              Experience the enchantment of fog and mist like never before with
-              our specialized services. Whether you are seeking to enhance the
-              ambiance of your landscape, create stunning visual effects, or add
-              a touch of magic to your event, our dedicated team is here to
-              bring your vision to life. With a focus on quality, innovation,
-              and customer satisfaction, we pride ourselves on delivering
-              exceptional results that exceed expectations. Join us on a journey
-              into the ethereal world of fog and mist, where every moment is an
-              opportunity to create unforgettable memories. Explore our services
-              today and let us turn your dreams into reality.
-            </p>
-            <button className="btn btn-primary text-white hover:bg-green-600">
-              <Link href={'/components/ContactUs'}>Get Started</Link>
-            </button>
-          </div>
-        </div>
-      </div> */}
-
-{/* https://png.pngtree.com/thumb_back/fh260/background/20220216/pngtree-meeting-background-picture-image_933745.jpg */}
-
-      <div className="hero min-h-screen " 
-      style={{
-        backgroundImage:
-          "url(https://t4.ftcdn.net/jpg/07/42/20/79/360_F_742207929_7Jd7UxcLijq5PnjQkMvdSi6VU7WSzMVM.jpg)",
-      }}>
         <div className="hero-content flex-col lg:flex-row-reverse bg-opacity-60">
           <img
             src="/top-left.jpg"
             className="xl:max-w-lg md:max-w-lg rounded-lg shadow-2xl xl:block md:block hidden"
           />
           <div className="xl:text-left md:text-left text-center">
-          <h1 className="mb-5 lg:text-5xl text-2xl font-bold text-white w-full">
+            <h1 className="mb-5 lg:text-5xl text-2xl font-bold text-white w-full">
               Embrace the Mystique <br></br> Discover Our Fog & Mist Services
               Today!
             </h1>
-            {/* <p className="mb-5 text-blue-400 font-bold">
-              Experience the enchantment of fog and mist like never before with
-              our specialized services. Whether you are seeking to enhance the
-              ambiance of your landscape, create stunning visual effects, or add
-              a touch of magic to your event, our dedicated team is here to
-              bring your vision to life. With a focus on quality, innovation,
-              and customer satisfaction, we pride ourselves on delivering
-              exceptional results that exceed expectations. Join us on a journey
-              into the ethereal world of fog and mist, where every moment is an
-              opportunity to create unforgettable memories. Explore our services
-              today and let us turn your dreams into reality.
-            </p> */}
             <button className="btn btn-primary text-white">Get Started</button>
           </div>
         </div>
@@ -83,34 +34,35 @@ const Home = ({ data, projects, review }) => {
           Step into a world of clarity with our Fog and Mist Services – where
           every droplet brings a touch of enchantment !
         </h1>
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 justify-around">
           {data?.map((product) => (
             <>
               <div>
-                <div className="card xl:w-96 md:w-96 w-80 bg-base-100 shadow-xl mb-6 mx-auto hover:bg-slate-500 hover:text-white">
-                  <figure className="px-10 pt-10">
-                    <img
-                      key={product?._id}
-                      src={product?.image}
-                      alt="Shoes"
-                      className="rounded-xl"
-                    />
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    <h2 className="card-title">{product?.title}</h2>
-                    <p>{product.descriptions}</p>
+                <div className="card grid grid-cols-2 h-80 bg-base-100 shadow-xl mb-6 mx-auto">
+                  <div className="card-body relative items-center text-center my-auto">
+                    <h2 className="card-title text-2xl">{product?.name}</h2>
                     <div className="card-actions">
-                      <button className="btn btn-primary text-white">
-                        <Link href={"/components/ContactUs"}>Contact_Us</Link>
+                      <button className="btn btn-primary text-white my-6">
+                        <Link href={`/components/${product._id}`}>Buy_Now</Link>
                       </button>
                     </div>
                   </div>
+                  <figure className="">
+                    <img
+                      key={product?._id}
+                      src={product?.images[0]}
+                      alt="Shoes"
+                      className=" absolute card-image xl:w-52 md:w-52 w-44 object-cover hover:scale-110 transition duration-1000 cursor-pointer"
+                    />
+                  </figure>
                 </div>
               </div>
             </>
           ))}
         </div>
       </div>
+
+      
       {/* end product section */}
 
       {/* start projects section  */}
@@ -124,15 +76,14 @@ const Home = ({ data, projects, review }) => {
             <>
               <div className="card xl:w-96 md:w-96 w-80-base-100 shadow-xl mx-auto mb-5 hover:bg-yellow-500 hover:text-white">
                 <figure>
-                  <img key={project?._id} src={project.image} alt="Shoes" />
+                  <img key={project?._id} src={project.images[0]} alt="Shoes" />
                 </figure>
                 <div className="card-body text-center">
-                  <h2 className="card-title mx-auto">{project.title}</h2>
-                  <p>{project.descriptions}</p>
+                  <h2 className="card-title mx-auto">{project.name}</h2>
                   <div className="card-actions justify-center">
                     <button className="btn btn-primary text-white">
-                      <Link href={"/components/ContactUs"}>
-                        Contact_Us to Get
+                      <Link href={`/deshboard/projects/${project?._id}`}>
+                        About this 
                       </Link>
                     </button>
                   </div>

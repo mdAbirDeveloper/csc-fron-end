@@ -29,7 +29,6 @@ const ContactUs = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         isLoading(false);
         isDone("message submited successfully")
       });

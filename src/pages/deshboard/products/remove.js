@@ -22,13 +22,13 @@ const remove = ({ data }) => {
 
   return (
     <div>
-      <div className="">
+      <div className="min-h-screen">
       <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500"> remove youre product</h1>
         {data.map((products) => (
           <>
             <div className="grid grid-cols-3 justify-between bg-indigo-100 mb-5 w-2/4 mx-auto">
-              <img className="bg-green-500 w-20" src={products?.image}></img>
-              <p>{products?.title}</p>
+              <img className="bg-green-500 w-20" src={products?.images[0]}></img>
+              <p>{products?.name}</p>
               <button className="btn btn-info" onClick={()=>handleDelete(products._id)}>Delete</button>
             </div>
           </>

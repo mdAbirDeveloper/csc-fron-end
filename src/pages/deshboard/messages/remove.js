@@ -21,7 +21,7 @@ const removeMessage = ({ data }) => {
 
   return (
     <div>
-      <div className="">
+      <div className="min-h-screen">
         {data.map((message) => (
           <>
             <div className="grid grid-cols-4 justify-between bg-indigo-100 mb-5  mx-auto">

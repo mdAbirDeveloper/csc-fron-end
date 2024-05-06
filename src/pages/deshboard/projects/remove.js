@@ -3,6 +3,7 @@ import DeshboardLayout from '../DeshboardLayout';
 import { useRouter } from 'next/router';
 
 const remove = ({data}) => {
+  console.log(data)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
     console.log(data)
@@ -22,13 +23,13 @@ const remove = ({data}) => {
      };
   return (
     <div>
-      <div className="">
+      <div className="min-h-screen">
         <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500"> remove youre projects</h1>
         {data.map((projects) => (
           <>
             <div className="grid grid-cols-3 justify-between bg-indigo-100 mb-5 w-2/4 mx-auto">
-              <img className="bg-green-500 w-20" src={projects?.image}></img>
-              <p>{projects?.title}</p>
+              <img className="bg-green-500 w-20" src={projects?.images[0]}></img>
+              <p>{projects?.name}</p>
               <button className="btn btn-info" onClick={()=>handleDelete(projects._id)}>Delete</button>
             </div>
           </>

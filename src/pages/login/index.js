@@ -1,25 +1,38 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const { login } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState("");
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  
+  const router = useRouter();
   const onSubmit = async (data) => {
-    console.log(data);
+    setLoading(true);
     const email = data.email;
     const password = data.password;
     login(email, password)
-    .then((user) =>{
-      console.log("user login successfully")
-    }).catch((error) =>{
-      console.log(error)
-    })
+      .then((user) => {
+        //console.log("user login successfully");
+        setLoading(false);
+        setLoginSuccess("Login successfully");
+        router.push('/');
+      })
+      .catch((error) => {
+        //console.log(error);
+        setError("Somethink wrong please try again");
+        setLoginSuccess("");
+        setLoading(false);
+      });
   };
 
   return (
@@ -29,9 +42,8 @@ export default function Login() {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              This login system are created just for Admin, so if you dont have
+              any admin password then dont try to login.
             </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -61,12 +73,28 @@ export default function Login() {
                 />
               </div>
               <div className="form-control mt-6">
-                <button
-                  className="btn btn-primary font-bold text-white"
-                  type="submit"
-                >
-                  Login
-                </button>
+                {loginSuccess && (
+                  <p className="text-xl uppercase font-serif text-green-500">
+                    {loginSuccess}
+                  </p>
+                )}
+                {error && (
+                  <p className="text-xl uppercase font-serif text-red-500">
+                    {error}
+                  </p>
+                )}
+                {loading ? (
+                  <button className="btn btn-primary font-bold text-white">
+                    ...........
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-primary font-bold text-white"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                )}
               </div>
             </form>
           </div>

@@ -23,7 +23,7 @@ const remove = ({ data }) => {
 
   return (
     <div>
-      <div className="">
+      <div className="min-h-screen">
       <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500"> remove youre review</h1>
         {data.map((review) => (
           <>
