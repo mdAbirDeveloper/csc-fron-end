@@ -18,7 +18,7 @@ const index = () => {
     const image1 = data.firstImage[0];
     const formData = new FormData();
     formData.append("image", image1);
-    const url = `https://api.imgbb.com/1/upload?key=d1fbaa0b9f043f285b08e6d997b387ef`;
+    const url = `https://api.imgbb.com/1/upload?key=10841ba3dc3175d0ce4663176c07cd7b`;
 
     //send image on imgbb
     fetch(url, {

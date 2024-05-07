@@ -22,7 +22,7 @@ const index = () => {
     // Handle multiple image uploads with ImgBB
     for (let i = 0; i < data.images.length; i++) {
       const image = data.images[i];
-      const imgBBUrl = `https://api.imgbb.com/1/upload?key=d1fbaa0b9f043f285b08e6d997b387ef`; // Replace with your actual API key
+      const imgBBUrl = `https://api.imgbb.com/1/upload?key=10841ba3dc3175d0ce4663176c07cd7b`; // Replace with your actual API key
 
       formData.append("image", image);
 
