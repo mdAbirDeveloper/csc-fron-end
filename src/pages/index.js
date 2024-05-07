@@ -15,7 +15,7 @@ const Home = ({ data, projects, review }) => {
   };
 
   return (
-    <div>
+    <div >
       <div
         className="hero min-h-screen "
         style={{
