@@ -25,7 +25,7 @@ const Category = ({ data }) => {
       setTruncatedDescriptions(updatedDescriptions);
       console.log('truncatedDescriptions:', truncatedDescriptions); // Added for debugging
     }
-  }, [data, truncatedDescriptions]);
+  }, [data]);
 
   return (
     <div className=" min-h-screen">
