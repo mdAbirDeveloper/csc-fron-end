@@ -132,7 +132,7 @@ const projectDetailPage = () => {
                 </button>
               </div>
               <button className="btn btn-success text-white font-bold mt-5">
-                <Link href={"/components/ContactUs"}>Contact_us</Link>
+                <Link href={"/components/ContactUs"}>Add To Cart</Link>
               </button>
             </div>
           </div>

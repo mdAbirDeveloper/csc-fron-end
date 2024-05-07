@@ -122,7 +122,7 @@ const ProductDetailPage = () => {
                 </button>
               </div>
               <button className="btn btn-success text-white font-bold mt-5">
-                Order Now
+                Add To Card
               </button>
             </div>
           </div>
