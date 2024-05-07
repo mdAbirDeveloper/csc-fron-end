@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
-import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import ProductsComponent from "./components/FilterdProject";
 import { FaArrowRight } from "react-icons/fa";
@@ -264,7 +263,7 @@ const Home = ({ data, projects, review }) => {
       {/* end review section  */}
 
       <br></br>
-      <About></About>
+      {/* <About></About> */}
       <br></br>
       <br></br>
       <ContactUs></ContactUs>
