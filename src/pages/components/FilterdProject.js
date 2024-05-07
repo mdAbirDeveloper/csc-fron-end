@@ -28,13 +28,13 @@ function ProductsComponent({ type }) {
         <div key={project?._id} className="relative">
           <Link href={`/deshboard/projects/${project?._id}`}>
             <div>
-              <img src={project?.images[0]} alt={project?.name}></img>
+              <img src={project?.images[0]} alt={project?.name} className="mx-auto"></img>
               <h1 className="text-center font-serif font-bold text-xl my-6">
                 {project?.name}
               </h1>
             </div>
             <div className="absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 transition-opacity duration-1000">
-              <img src={project?.images[1]} alt={project?.name}></img>
+              <img src={project?.images[1]} alt={project?.name}  className="mx-auto"></img>
             </div>
           </Link>
         </div>

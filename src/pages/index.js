@@ -188,7 +188,7 @@ const Home = ({ data, projects, review }) => {
               Sed ut perspiciatis unde omnis iste natus errori
             </p>
           </div>
-          <div className=" flex justify-end mt-4">
+          <div className=" flex lg:justify-end justify-center mt-4">
             <Link href={`/components/Products`}>
               <button className="flex underline text-xl hover:text-blue-500 font-bold">
                 VIEW ALL PRODUCTS{" "}
