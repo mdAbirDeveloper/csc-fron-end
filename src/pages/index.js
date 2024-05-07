@@ -4,8 +4,9 @@ import Link from "next/link";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import ProductsComponent from "./components/FilterdProject";
-import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useState } from "react";
+
 
 const Home = ({ data, projects, review }) => {
   const [selectedType, setSelectedType] = useState(""); // State to store the selected product type
@@ -129,12 +130,12 @@ const Home = ({ data, projects, review }) => {
           Here are our previous projects
         </h1>
 
-        <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-8 w-full mx-auto">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-8 w-full mx-auto">
           {projects.map((project) => (
-            <div key={project?._id} className="bg-blue-100">
+            <div key={project?._id} className="bg-blue-100 control-size">
               <Link href={`/deshboard/projects/${project?._id}`}>
                 <div
-                  className=" bg-cover bg-center flex flex-col justify-between rounded-full"
+                  className="bg-cover bg-center flex flex-col justify-between rounded-full"
                   style={{
                     height: "650px",
                   }}

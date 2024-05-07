@@ -1,0 +1,35 @@
+.control-size {
+    height: 650px;
+  }
+
+  @media (min-width: 494px) and (max-width: 563px) {
+    .control-size {
+      height: 700px; /* Or any other specific size you want */
+    }
+  }
+  @media (min-width: 563px) and (max-width: 697px) {
+    .control-size {
+      height: 800px; /* Or any other specific size you want */
+    }
+  }
+  @media (min-width: 697px) and (max-width: 767px) {
+    .control-size {
+      height: 900px; /* Or any other specific size you want */
+    }
+  }
+  @media (min-width: 1033px) and (max-width: 1169px) {
+    .control-size {
+      height: 700px; /* Or any other specific size you want */
+    }
+  }
+  @media (min-width: 1169px) and (max-width: 1280px) {
+    .control-size {
+      height: 800px; /* Or any other specific size you want */
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1500px) {
+    .control-size {
+      height: 650px; /* Or any other specific size you want */
+    }
+  }

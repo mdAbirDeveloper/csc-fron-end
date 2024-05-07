@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import '../styles/project.css'
 import Authentication from "./authentication/Authentication";
 import Layout from "./Layout/Layout";
 
