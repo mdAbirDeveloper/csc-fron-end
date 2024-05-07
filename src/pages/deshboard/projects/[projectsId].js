@@ -11,7 +11,7 @@ const projectDetailPage = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
-  
+
   const [count, setCount] = useState(1);
 
   useEffect(() => {
@@ -48,13 +48,24 @@ const projectDetailPage = () => {
     }
   }, [projectsId]);
 
+  const description = project?.descriptions;
+  const truncateLength = 200; // Adjust this value as needed
+
+  const truncatedDescription =
+    description?.substring(0, truncateLength) + ".......";
+
+  useEffect(() => {
+    if (project && project.images && project.images.length > 0) {
+      setSelectedImage(project.images[0]);
+    }
+  }, [project]);
+
   const increment = () => setCount(count + 1);
   const decrement = () => {
     if (count > 0) {
       setCount(count - 1);
     }
   };
-
 
   if (loading) {
     return (
@@ -99,7 +110,11 @@ const projectDetailPage = () => {
               </span>
               ${project?.price}
             </p>
-            <h1>{project.descriptions}</h1>
+            <p>
+              {description.length > truncateLength
+                ? truncatedDescription
+                : description}
+            </p>
             <div className="grid grid-cols-2">
               <div className="flex justify-center items-center mr-3 mt-3 bg-red-200 rounded-xl w-36">
                 <button
@@ -120,6 +135,20 @@ const projectDetailPage = () => {
                 <Link href={"/components/ContactUs"}>Contact_us</Link>
               </button>
             </div>
+          </div>
+        </div>
+        <div className="xl:w-4/5 md:w-4/5 w-full mx-auto">
+          <div>
+            <button className="bg-none text-xl font-serif font-semibold hover:text-blue-500 mr-9">
+              Descriptions
+            </button>
+            <button className="bg-none text-xl font-serif font-semibold hover:text-blue-500">
+              Review
+            </button>
+          </div>
+          <div className="divider"></div>
+          <div className="mb-20">
+            <p>{project?.descriptions}</p>
           </div>
         </div>
       </div>
