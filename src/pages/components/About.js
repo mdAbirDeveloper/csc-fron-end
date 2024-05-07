@@ -1,18 +1,24 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
 import React from "react";
-import Products from "./Products";
 
 const About = ({ review }) => {
   return (
     <div className="min-h-screen">
       <div
-      className="hero"
-       style={{
-        backgroundImage: 'url(https://t3.ftcdn.net/jpg/06/25/09/82/360_F_625098229_YCpi0WSln9zwNVopFqfEAlCEDrl94PdU.jpg)',
-
-      }}><h1 className="text-center lg:my-40 my-20 text-5xl font-serif font-bold text-white">About Page</h1></div>
+        className="hero relative"
+        style={{
+          backgroundImage:
+            "url(https://t3.ftcdn.net/jpg/06/25/09/82/360_F_625098229_YCpi0WSln9zwNVopFqfEAlCEDrl94PdU.jpg)",
+        }}
+      >
+        <h1 className="text-center lg:my-40 my-20 text-5xl font-serif font-bold text-white">
+          About Page
+        </h1>
+      </div>
+        <h1 className="-mt-6 absolute bg-white p-3 rounded-full shadow lg:text-4xl md:text-3xl texl-2xl lg:ml-11 font-serif font-bold">
+          HOME - <span className="text-blue-400">About</span>
+        </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:w-4/5 mg-w-4/5 w-full mx-auto mt-6">
         <div className="mt-10">
           <img src="/top-left.jpg"></img>
@@ -36,10 +42,15 @@ const About = ({ review }) => {
               Our Mission & Vision
             </h1>
             <p className=" font-serif">
-            We are your edge computing experts. We provide cutting-edge fog and mist solutions to unlock real-time data power. Our vision: a fog-free future with seamless integration, boosting security and efficiency for a smarter tomorrow
+              We are your edge computing experts. We provide cutting-edge fog
+              and mist solutions to unlock real-time data power. Our vision: a
+              fog-free future with seamless integration, boosting security and
+              efficiency for a smarter tomorrow
             </p>
           </div>
-          <button className="btn bg-blue-400 hover:bg-red-400 w-3/5 rounded-3xl text-white font-bold">Contact_Us</button>
+          <button className="btn bg-blue-400 hover:bg-red-400 w-3/5 rounded-3xl text-white font-bold">
+            Contact_Us
+          </button>
         </div>
       </div>
 
