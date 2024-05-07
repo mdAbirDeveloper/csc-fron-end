@@ -47,6 +47,8 @@ const index = () => {
       const project = {
         name: data.name,
         descriptions: data.description,
+        price: data.price,
+        oldprice: data.oldprice,
         images: imageUrls, // Array of uploaded image URLs
       };
 
@@ -75,6 +77,22 @@ const index = () => {
         Add Your Product
       </h1>
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="write your product old price"
+            className="input input-bordered"
+            {...register("oldprice")}
+          />
+        </div>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="write your product price"
+            className="input input-bordered"
+            {...register("price")}
+          />
+        </div>
         <div className="form-control">
           <input
             type="text"

@@ -13,7 +13,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/products/${ProductId}`);
+        const response = await fetch(`https://csc-server-again.vercel.app/products/${ProductId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch product');
         }

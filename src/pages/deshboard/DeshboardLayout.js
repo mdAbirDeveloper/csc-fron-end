@@ -22,6 +22,15 @@ const DeshboardLayout = ({ children }) => {
       >
         Remove Projects
       </Link>
+      <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/category"}>
+        Add Category
+      </Link>
+      <Link
+        className="btn btn-warning mt-3 mr-3"
+        href={"/deshboard/category/remove"}
+      >
+        Remove Category
+      </Link>
       <Link
         className="btn btn-info mt-3 mr-3"
         href={"/deshboard/client"}

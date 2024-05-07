@@ -6,38 +6,40 @@ const Products = ({ data }) => {
   //console.log(data);
   return (
     <div>
-      <div>
+      <div className="min-h-screen">
         <h1 className="text-center my-6 font-bold xl:text-4xl md:text-3xl text-2xl xl:w-3/4 md:w-3/4 w-full mx-auto py-2">
           Step into a world of clarity with our Fog and Mist Services – where
           every droplet brings a touch of enchantment !
         </h1>
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 justify-around">
+        <div>
+        <div className="grid xl:grid-cols-3 mt-10 md:grid-cols-2 grid-cols-1 gap-8 justify-around">
           {data?.map((product) => (
             <>
-              <div>
-                <div className="card grid grid-cols-2 h-80 bg-base-100 shadow-xl mb-6 mx-auto">
-                  <div className="card-body relative items-center text-center my-auto">
-                    <h2 className="card-title text-2xl">{product?.name}</h2>
-                    {/* <p>{product.descriptions}</p> */}
-                    <div className="card-actions">
-                      <button className="btn btn-primary text-white">
-                        <Link href={`/components/${product._id}`}>Buy_Now</Link>
-                      </button>
+              <div className="">
+                <div
+                  style={{
+                    backgroundImage: `url(${product?.images[0]})`,
+                  }}
+                  className="card min-h-64 rounded-none bg-base-100 shadow-xl mb-6 mx-auto hover:scale-105 transition-transform bg-cover bg-center"
+                >
+                  <Link href={`/components/${product._id}`}>
+                    <div className="card-body my-auto">
+                      <h2 className="card-title text-3xl font-serif uppercase mt-10">
+                        {product?.name}
+                      </h2>
+                      <div className="card-actions mt-10">
+                        <button className="text-red-500 hover:text-blue-600 font-serif text-xl uppercase my-6 underline">
+                          Shop Now +
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <figure className="">
-                    <img
-                      key={product?._id}
-                      src={product?.images[0]}
-                      alt="Shoes"
-                      className=" absolute card-image xl:w-52 md:w-52 w-44 object-cover hover:scale-110 transition duration-1000 cursor-pointer"
-                    />
-                  </figure>
+                  </Link>
                 </div>
               </div>
             </>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

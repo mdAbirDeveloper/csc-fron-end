@@ -52,7 +52,7 @@ const Navber = () => {
                 <Link href={"/components/About"}>About_Us</Link>
               </li>
               <li>
-                <Link href={"/"}>Category</Link>
+                <Link href={"/components/Category"}>Category</Link>
               </li>
               <li>
                 <Link href={"/components/ContactUs"}>Contact-us</Link>
@@ -93,7 +93,7 @@ const Navber = () => {
               <Link href={"/components/About"}>About_Us</Link>
             </li>
             <li>
-              <Link href={"/"}>Category</Link>
+            <Link href={"/components/Category"}>Category</Link>
             </li>
             <li>
               <Link href={"/components/ContactUs"}>Contact-us</Link>

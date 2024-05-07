@@ -71,6 +71,12 @@ const projectDetailPage = () => {
           </div>
           <div className='my-auto'>
             <h1 className='text-4xl uppercase font-bold font-serif'>{project.name}</h1>
+            <p className="text-2xl font-serif my-2">
+                      <span className="text-gray-300 line-through mr-3">
+                      ${project.oldprice}{" "}
+                      </span>
+                      ${project?.price}
+                    </p>
             <h1>{project.descriptions}</h1>
             <button className='btn btn-success text-white font-bold mt-5'><Link href={'/components/ContactUs'}>Contact_us</Link></button>
           </div>
