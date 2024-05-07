@@ -3,7 +3,6 @@ import DeshboardLayout from '../DeshboardLayout';
 import { useRouter } from 'next/router';
 
 const remove = ({data}) => {
-  console.log(data)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
     console.log(data)

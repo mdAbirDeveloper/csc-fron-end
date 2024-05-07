@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const remove = ({ data }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
- console.log(data)
   const handleDelete = async (id) => {
     console.log(id)
     try {
