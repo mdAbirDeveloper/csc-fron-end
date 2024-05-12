@@ -182,7 +182,7 @@ const Connectors = () => {
                     type="radio"
                     name={`rating-${product?._id}`}
                     value={value}
-                    className={`mask mask-star-2 bg-orange-400 ml-3 ${
+                    className={`mask mask-star-2 bg-orange-400 ml-3 rating ${
                       value <= (hoverRating || rating) ? "checked" : ""
                     }`}
                     onClick={() => handleRatingClick(value)}
