@@ -17,7 +17,7 @@ const index = ({ data }) => {
                   <h2 className="text-center text-xl font-bold font-serif">{hydrulicvalves?.name}</h2>
                   <p></p>
                   <div className="card-actions justify-center">
-                    <Link href={`/components/products/hydrulicvalves/${hydrulicvalves._id}`}>
+                    <Link href={`/components/products/hydraulicValves/${hydrulicvalves._id}`}>
                       <button className="btn btn-primary">انظر التفاصيل</button>
                     </Link>
                   </div>
