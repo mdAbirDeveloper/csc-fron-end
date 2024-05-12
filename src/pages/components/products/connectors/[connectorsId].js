@@ -3,6 +3,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { isMobile } from 'react-device-detect';
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const Connectors = () => {
   const router = useRouter();
@@ -142,20 +143,20 @@ const Connectors = () => {
               ))}
             </p>
             <div className=" border ">
-              <div className="grid grid-cols-2 justify-between">
-                <div className="grid grid-cols-3 ml-3 justify-center items-center mr-3 mt-3 bg-red-200 rounded-xl w-36">
+            <div className="grid grid-cols-2 justify-between">
+                <div className="grid grid-cols-3 ml-3 justify-center items-center mr-3 mt-3 w-36 border">
                   <button
-                    className="bg-white rounded-full font-bold py-2 px-4"
+                    className="font-bold py-2 px-4 border-r-2 w-10"
                     onClick={decrement}
                   >
-                    -
+                    <FaMinus />
                   </button>
-                  <span className="mx-4 text-xl font-bold">{count}</span>
+                  <span className="mx-4 text-xl font-bold text-center">{count}</span>
                   <button
-                    className="bg-white font-bold py-2 px-4 rounded-full"
+                    className="font-bold py-2 px-4 border-l-2 w-10"
                     onClick={increment}
                   >
-                    +
+                    <FaPlus />
                   </button>
                 </div>
                 <div className="ml-36">
