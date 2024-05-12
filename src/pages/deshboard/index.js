@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from './DeshboardLayout';
 import DeshboardLayout from './DeshboardLayout';
 
 const index = () => {

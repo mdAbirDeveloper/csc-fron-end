@@ -1,4 +1,6 @@
-import { reload } from "firebase/auth";
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
+
 import DeshboardLayout from "../DeshboardLayout";
 import { useRouter } from "next/router";
 
@@ -22,7 +24,7 @@ const remove = ({ data }) => {
   return (
     <div>
       <div className="min-h-screen">
-      <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500"> remove youre product</h1>
+      <h1 className="text-3xl my-8 text-center font-bold uppercase text-green-500"> remove your product</h1>
         {data.map((products) => (
           <>
             <div className="grid grid-cols-3 justify-between bg-indigo-100 mb-5 w-2/4 mx-auto">

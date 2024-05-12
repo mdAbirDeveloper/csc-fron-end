@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import DeshboardLayout from "../DeshboardLayout";
 import { useForm } from "react-hook-form";
+import DeshboardLayout from "./DeshboardLayout";
 
-const index = () => {
+const connectors = () => {
   const [submited, setSubmited] = useState("");
   const [loading, setLoading] = useState(false);
   const {
@@ -34,7 +34,7 @@ const index = () => {
         }).then((res) => res.json())
       );
       
-      setSubmited("Product added successfully")
+      setSubmited("connectors added successfully")
       setLoading(false);
       formData.delete("image"); // Clear formData for the next image
     }
@@ -47,13 +47,15 @@ const index = () => {
       const project = {
         name: data.name,
         descriptions: data.description,
+        price: data.price,
+        oldprice: data.oldprice,
         images: imageUrls, // Array of uploaded image URLs
       };
 
       //console.log(project);
 
       // Send data to MongoDB (modify endpoint and format if needed)
-      const response = await fetch("https://csc-server-again.vercel.app/category", {
+      const response = await fetch("https://csc-server-again.vercel.app/connectors", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -72,29 +74,46 @@ const index = () => {
   return (
     <div>
       <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500">
-        Add Your Category
+        Add Your connectors
       </h1>
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <input
             type="text"
-            placeholder="write your category name"
+            placeholder="write your connectors old price"
+            className="input input-bordered"
+            {...register("oldprice")}
+          />
+        </div>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="write your connectors price"
+            className="input input-bordered"
+            {...register("price")}
+          />
+        </div>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="write your connectors name"
             className="input input-bordered"
             required
             {...register("name")}
           />
         </div>
         <div className="form-control">
-          <input
+          <label className="text-red-400">user , for give a line brack in your descriptions</label>
+          <textarea
             type="text"
-            placeholder="write your category description"
+            placeholder="write your connectors description"
             className="input input-bordered"
             required
             {...register("description")}
           />
         </div>
         <div>
-          <label>Choose images of your category (multiple allowed)</label>
+          <label>Choose images of your connectors</label>
           <input type="file" {...register("images", { required: true })} multiple />
           {errors.images && <span>This field is required</span>}
         </div>
@@ -112,7 +131,7 @@ const index = () => {
             className="btn btn-primary font-bold text-white"
             type="submit"
           >
-            Add Product
+            Add connectors
           </button>
           }
         </div>
@@ -121,8 +140,8 @@ const index = () => {
   );
 };
 
-export default index;
+export default connectors;
 
-index.getLayout = function getLayout(page) {
+connectors.getLayout = function getLayout(page) {
   return <DeshboardLayout>{page}</DeshboardLayout>;
 };

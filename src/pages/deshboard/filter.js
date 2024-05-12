@@ -1,21 +1,22 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import DeshboardLayout from "../DeshboardLayout";
 import { useForm } from "react-hook-form";
+import DeshboardLayout from "./DeshboardLayout";
 
-const index = () => {
+const filter = () => {
+  const [submited, setSubmited] = useState("");
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const [submited, setSubmited] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
+    setLoading(true)
     //console.log(data);
-    setLoading(true);
+
     const formData = new FormData();
     const imgBBUploadPromises = [];
 
@@ -32,7 +33,8 @@ const index = () => {
           body: formData,
         }).then((res) => res.json())
       );
-      setSubmited("Project added successfully");
+      
+      setSubmited("filter added successfully")
       setLoading(false);
       formData.delete("image"); // Clear formData for the next image
     }
@@ -53,16 +55,13 @@ const index = () => {
       //console.log(project);
 
       // Send data to MongoDB (modify endpoint and format if needed)
-      const response = await fetch(
-        "https://csc-server-again.vercel.app/projects",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(project),
-        }
-      );
+      const response = await fetch("https://csc-server-again.vercel.app/filter", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(project),
+      });
 
       const result = await response.json();
       //console.log(result);
@@ -75,13 +74,13 @@ const index = () => {
   return (
     <div>
       <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500">
-        Add Your project
+        Add Your filter
       </h1>
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <input
             type="text"
-            placeholder="write your project old price"
+            placeholder="write your filter old price"
             className="input input-bordered"
             {...register("oldprice")}
           />
@@ -89,66 +88,63 @@ const index = () => {
         <div className="form-control">
           <input
             type="text"
-            placeholder="write your project price"
+            placeholder="write your filter price"
             className="input input-bordered"
-            required
             {...register("price")}
           />
         </div>
         <div className="form-control">
           <input
             type="text"
-            placeholder="write your project name"
+            placeholder="write your filter name"
             className="input input-bordered"
             required
             {...register("name")}
           />
         </div>
         <div className="form-control">
-          <input
+        <label className="text-red-400">user , for give a line brack in your descriptions</label>
+          <textarea
             type="text"
-            placeholder="write your project description"
+            placeholder="write your filter description"
             className="input input-bordered"
             required
             {...register("description")}
           />
         </div>
         <div>
-          <label>Choose images of your project (multiple allowed)</label>
-          <input
-            type="file"
-            {...register("images", { required: true })}
-            multiple
-          />
+          <label>Choose images of your filter</label>
+          <input type="file" {...register("images", { required: true })} multiple />
           {errors.images && <span>This field is required</span>}
         </div>
         <div className="form-control mt-6">
-          <p className="text-xl uppercase font-serif text-green-500">
+        <p className="text-xl uppercase font-serif text-green-500">
             {submited}
           </p>
-          {loading ? (
-            <button
-              className="btn btn-primary font-bold text-white"
-              type="submit"
-            >
-              ........
-            </button>
-          ) : (
-            <button
-              className="btn btn-primary font-bold text-white"
-              type="submit"
-            >
-              Add project
-            </button>
-          )}
+          {
+            loading ? <button
+            className="btn btn-primary font-bold text-white"
+            type="submit"
+          >
+            ........
+          </button> : <button
+            className="btn btn-primary font-bold text-white"
+            type="submit"
+          >
+            Add filter
+          </button>
+          }
         </div>
       </form>
     </div>
   );
 };
 
-export default index;
+export default filter;
 
-index.getLayout = function getLayout(page) {
-  return <DeshboardLayout>{page}</DeshboardLayout>;
-};
+
+filter.getLayout = function getLayout(page) {
+  return (
+    <DeshboardLayout>{page}</DeshboardLayout>
+  )
+}

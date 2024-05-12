@@ -1,28 +1,29 @@
 import React from "react";
+import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-neutral text-neutral-content">
-        <nav>
-          <h6 className="footer-title">Head Office</h6>
-          <a className="link link-hover">Airport Road، Building 7, Level 1</a>
-          <a className="link link-hover">Zone A, The Business Gate, Riyadh</a>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Inquiries</h6>
-          <a className="link link-hover">For any inquiries, questions or commendations, please call:</a>
-          <a className="link link-hover">+966533360688 or fill out the following form</a>
-          <a className="link link-hover">info@cities-systems.sa</a>
-          <a className="link link-hover">Tel: +966505580899</a>
-          <a className="link link-hover">Fax: +966533360688</a>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Employment</h6>
-          <a className="link link-hover">To apply for a job with Cities Systems Corporation,</a>
-          <a className="link link-hover"> please send a cover letter together with your C.V. to: info@cities-systems.sa</a>
-        </nav>
-      </footer>
+      
+      <div style={{ backgroundColor: "#044160" }}>
+        <div className="flex justify-center py-10">
+          <p className="lg:text-2xl md:text-2xl text-lg text-white font-bold font-serif">معلومات عن الشركة</p>
+          <p className="lg:text-2xl md:text-2xl text-lg text-white ml-6 font-bold font-serif">المساعدة</p>
+          <p className="lg:text-2xl md:text-2xl text-lg text-white ml-6 font-bold font-serif">حمل البروشور</p>
+        </div>
+        <div className="divider lg:w-4/5 md:w-4/5 w-full mx-auto text-white"></div>
+        <div className="lg:w-4/5 md:w-4/5 w-full mx-auto py-8 grid grid-cols-2">
+          <div className="flex">
+            <FaTwitter className="text-2xl ml-4 text-white"></FaTwitter>
+            <FaFacebook className="text-2xl ml-4 text-white"></FaFacebook>
+            <FaInstagram className="text-2xl ml-4 text-white"></FaInstagram>
+            <FaGithub className="text-2xl ml-4 text-white"></FaGithub>
+          </div>
+          <div>
+            <p className=" font-serif text-right text-gray-400">© شركة أنظمة المدن 2024، جميع الحقوق محفوظة</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

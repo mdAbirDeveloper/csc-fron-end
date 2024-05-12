@@ -2,19 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
+import { FaArrowRight } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { isMobile } from 'react-device-detect';
 
 const Navber = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const router = useRouter();
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Toggle dropdown for language
-  };
+  const handleWhatsAppRedirect = () => {
+    const phoneNumber = '+8801832822560';
+    let url;
 
-  const handleOptionClick = (option) => {
-    setSelectedLanguage(option); // Set the selected language
-    setIsOpen(false); // Close the dropdown
+    // Check if the user is on a mobile device
+    if (isMobile) {
+      url = `https://wa.me/${phoneNumber}`;
+    } else {
+      // If on desktop, redirect to WhatsApp Web
+      url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+    }
+    
+    router.push(url);
   };
 
   return (
@@ -43,39 +52,38 @@ const Navber = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link href={"/"}>Home</Link>
-              </li>
-              <li>
-                <Link href={"/components/Products"}>Products</Link>
-              </li>
-              <li>
-                <Link href={"/components/About"}>About_Us</Link>
-              </li>
-              <li>
-                <Link href={"/components/Category"}>Category</Link>
-              </li>
-              <li>
-                <Link href={"/components/ContactUs"}>Contact-us</Link>
-              </li>
-              <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
-              <li>
-                {user?.uid ? (
-                  <>
-                    <button onClick={signOutUser}><Link href={'/'}>SignOut</Link></button>
-                  </>
-                ) : (
-                  <Link href={"/login"}>Login</Link>
-                )}
-              </li>
+              <Link href={"/"}>الرئيسيه</Link>
+            </li>
+            <li>
+              <Link href={"/components/section"}>الاقسام</Link>
+            </li>
+            <li>
+              <Link href={"/components/products"}>المنتجات</Link>
+            </li>
+            <li>
+              <Link href={"/components/question"}>الاسئلة</Link>
+            </li>
+            <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
+            <li>
+              {user?.uid ? (
+                <>
+                  <button onClick={signOutUser}>
+                    <Link href={"/"}>SignOut</Link>
+                  </button>
+                </>
+              ) : (
+                <Link href={"/login"}>Login</Link>
+              )}
+            </li>
             </ul>
           </div>
           <div>
             <Image
               src="/logo.png"
-              width={200}
-              height={80}
+              width={50}
+              height={50}
               alt=""
-              className="bg-green-500 rounded-xl xl:block md:block hidden"
+              className="rounded-xl xl:block md:block hidden"
               priority
             ></Image>
           </div>
@@ -84,25 +92,24 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href={"/"}>Home</Link>
+              <Link href={"/"}>الرئيسيه</Link>
             </li>
             <li>
-              <Link href={"/components/Products"}>Products</Link>
+              <Link href={"/components/section"}>الاقسام</Link>
             </li>
             <li>
-              <Link href={"/components/About"}>About_Us</Link>
+              <Link href={"/components/products"}>المنتجات</Link>
             </li>
             <li>
-            <Link href={"/components/Category"}>Category</Link>
-            </li>
-            <li>
-              <Link href={"/components/ContactUs"}>Contact-us</Link>
+              <Link href={"/components/question"}>الاسئلة</Link>
             </li>
             <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
             <li>
               {user?.uid ? (
                 <>
-                  <button onClick={signOutUser}><Link href={'/'}>SignOut</Link></button>
+                  <button onClick={signOutUser}>
+                    <Link href={"/"}>SignOut</Link>
+                  </button>
                 </>
               ) : (
                 <Link href={"/login"}>Login</Link>
@@ -113,25 +120,13 @@ const Navber = () => {
 
         <div className="navbar-end relative">
           <div className="">
-            <button onClick={toggleDropdown} className="flex text-xl ml-2">
-              {/* <FaEarthAfrica /> */}
-              {selectedLanguage ? selectedLanguage : "English"}
+            <button
+             onClick={handleWhatsAppRedirect}
+              className="flex btn text-white rounded-3xl"
+              style={{ backgroundColor: "#2594AF" }}
+            >
+              Contact Us <FaArrowRight className="mt-1 ml-1"></FaArrowRight>
             </button>
-            {isOpen && (
-              <div className="absolute bg-white dropdown-content w-28 rounded shadow-xl p-8 justify-start">
-                <button
-                  onClick={() => handleOptionClick("English")}
-                  className=""
-                >
-                  English
-                </button>
-                <br />
-                <br />
-                <button onClick={() => handleOptionClick("Arabic")}>
-                  Arabic
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>
