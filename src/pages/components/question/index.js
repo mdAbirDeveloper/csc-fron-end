@@ -3,15 +3,17 @@ import React from "react";
 const index = () => {
   return (
     <div>
-      <div>
-        <div className="lg:w-4/5 md:w-4/5 w-full mx-auto mb-20">
-          <h2 className="text-center text-4xl font-bold font-serif my-6">
+      <div style={{maxWidth: '1500px',}} className="mx-auto mt-20">
+        <div className="mb-20">
+          <h2 className="text-right text-4xl font-bold font-serif">
             أسئلة شائعة حول كيفية تنقية الهواء وتحسين جودته
           </h2>
           <div>
+          <div style={{borderTop: '1px solid gray'}} className=" opacity-60 mt-8"></div>
+
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 ما هي الاختلافات الرئيسية بين أنظمة الضباب والرذاذ المستخدمة
@@ -33,10 +35,11 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كيف تساعد تقنية الضباب والرذاذ في تخفيف حرارة الجو في الصيف ؟
@@ -57,10 +60,11 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 ماهي فوائد تركيب نظام الضباب والرذاذ ؟
@@ -89,10 +93,11 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كم نسبة تبريد الجو بعد استخدم النظام ؟
@@ -113,10 +118,11 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 هل يمكنني استخدام أنظمتكم في مكان عملي؟
@@ -128,10 +134,11 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كيف يمكنني الحصول على أنظمتكم؟

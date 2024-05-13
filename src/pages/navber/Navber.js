@@ -35,7 +35,7 @@ const Navber = () => {
     switch (segment) {
       case "products":
         return "المنتجات"; // Translate "products" to Arabic
-        
+
       case "allProduct":
         return "جميع المنتجات"; // Translate "products" to Arabic
 
@@ -80,30 +80,77 @@ const Navber = () => {
   };
 
   return (
-    <div>
-      <div className="navbar bg-base-100 font-bold shadow-xl  fixed top-0 w-full z-50">
-        <div className="navbar-start relative">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <div className=" mx-auto z-50 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8 sticky top-0">
+      <div style={{ maxWidth: "1300px" }} className=" mx-auto">
+        <div className="navbar font-bold">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link href={"/"}>الرئيسيه</Link>
+                </li>
+                <li>
+                  <Link href={"/components/section"}>الاقسام</Link>
+                </li>
+                <li>
+                  <Link href={"/components/products"}>المنتجات</Link>
+                </li>
+                <li>
+                  <Link href={"/components/question"}>الاسئلة</Link>
+                </li>
+                <li>
+                  {user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}
+                </li>
+                <li>
+                  {user?.uid ? (
+                    <>
+                      <button onClick={signOutUser}>
+                        <Link href={"/"}>SignOut</Link>
+                      </button>
+                    </>
+                  ) : (
+                    <Link href={"/login"}>Login</Link>
+                  )}
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
+            <div>
+              <Image
+                src="/logo.png"
+                width={50}
+                height={50}
+                alt=""
+                className="rounded-xl xl:block md:block hidden"
+                priority
+              ></Image>
+            </div>
+          </div>
+
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
               <li>
                 <Link href={"/"}>الرئيسيه</Link>
               </li>
@@ -130,94 +177,55 @@ const Navber = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <Image
-              src="/logo.png"
-              width={50}
-              height={50}
-              alt=""
-              className="rounded-xl xl:block md:block hidden"
-              priority
-            ></Image>
-          </div>
-        </div>
 
-        <div className="navbar-center hidden lg:flex relative">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link href={"/"}>الرئيسيه</Link>
-            </li>
-            <li>
-              <Link href={"/components/section"}>الاقسام</Link>
-            </li>
-            <li>
-              <Link href={"/components/products"}>المنتجات</Link>
-            </li>
-            <li>
-              <Link href={"/components/question"}>الاسئلة</Link>
-            </li>
-            <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
-            <li>
-              {user?.uid ? (
-                <>
-                  <button onClick={signOutUser}>
-                    <Link href={"/"}>SignOut</Link>
-                  </button>
-                </>
-              ) : (
-                <Link href={"/login"}>Login</Link>
-              )}
-            </li>
-          </ul>
-        </div>
-
-        <div className="navbar-end relative">
-          <div className="">
-            <button
-              onClick={handleWhatsAppRedirect}
-              className="flex btn text-white rounded-3xl"
-              style={{ backgroundColor: "#2594AF" }}
-            >
-              Contact Us <FaArrowRight className="mt-1 ml-1"></FaArrowRight>
-            </button>
+          <div className="navbar-end">
+            <div className="flex justify-end">
+              <button
+                onClick={handleWhatsAppRedirect}
+                className="flex btn text-white rounded-3xl"
+                style={{ backgroundColor: "#2594AF" }}
+              >
+                Contact Us <FaArrowRight className="mt-1 ml-1"></FaArrowRight>
+              </button>
+            </div>
           </div>
+          {/* </div> */}
         </div>
+        {/* Breadcrumb navigation */}
+
+        <nav className="breadcrumb text-sm p-2 lg:mr-4 md:mr-4 mr-0">
+          {pathSegments?.length > 1 && (
+            <ul className="flex  justify-end">
+              {[...pathSegments]
+                .slice(0, 3)
+                .reverse()
+                .map((segment, index) => (
+                  <li key={index}>
+                    {index !== 0 && (
+                      <span className="lg:mx-2 md:mx-2 mx-0">{"<"} </span>
+                    )}{" "}
+                    {/* Conditionally render "<" */}
+                    <Link
+                      href={`/${pathSegments.slice(0, index + 1).join("/")}`}
+                      className={
+                        router.pathname ===
+                        `/${pathSegments.slice(0, index + 1).join("/")}`
+                      }
+                    >
+                      {translateSegment(segment)}
+                    </Link>
+                  </li>
+                ))}
+              <li>
+                <Link href="/">
+                  <span className="lg:mx-2 md:mx-2 mx-0">{"<"}</span> الصفحة
+                  الرئيسية {/* Translate "Home" to Arabic */}
+                </Link>
+              </li>
+            </ul>
+          )}
+        </nav>
       </div>
-
-      {/* Breadcrumb navigation */}
-
-      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0">
-        {pathSegments?.length > 1 && (
-          <ul className="flex  justify-end">
-            {[...pathSegments]
-              .slice(0, 3)
-              .reverse()
-              .map((segment, index) => (
-                <li key={index}>
-                  {index !== 0 && (
-                    <span className="lg:mx-2 md:mx-2 mx-0">{"<"} </span>
-                  )}{" "}
-                  {/* Conditionally render "<" */}
-                  <Link
-                    href={`/${pathSegments.slice(0, index + 1).join("/")}`}
-                    className={
-                      router.pathname ===
-                      `/${pathSegments.slice(0, index + 1).join("/")}`
-                    }
-                  >
-                    {translateSegment(segment)}
-                  </Link>
-                </li>
-              ))}
-            <li>
-              <Link href="/">
-                <span className="lg:mx-2 md:mx-2 mx-0">{"<"}</span> الصفحة
-                الرئيسية {/* Translate "Home" to Arabic */}
-              </Link>
-            </li>
-          </ul>
-        )}
-      </nav>
     </div>
   );
 };

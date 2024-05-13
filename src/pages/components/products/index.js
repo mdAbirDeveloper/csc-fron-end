@@ -4,7 +4,7 @@ import React from 'react'
 
 const index = ({data}) => {
   return (
-    <div className=" min-h-screen my-8 lg:w-11/12 md:w-11/12 w-full mx-auto">
+    <div style={{ maxWidth: "1300px" }} className=" min-h-screen my-8 mt-20 mx-auto">
     <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4">
       {data?.map((products) => (
         <>

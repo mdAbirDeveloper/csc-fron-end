@@ -125,8 +125,8 @@ const Connectors = () => {
   }
 
   return (
-    <div>
-      <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 my-5 lg:w-4/5 md:w-4/5 w-full mx-auto">
+    <div className="min-h-screen mx-auto mt-20" style={{ maxWidth: "1200px" }}>
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 my-5">
         <div className="lg:order-1 md:order-1 order-2">
           <div className="text-right">
             <h1 className="text-4xl font-serif font-bold">{product.name}</h1>

@@ -6,7 +6,7 @@ import { TiWeatherShower } from "react-icons/ti";
 
 const section = () => {
   return (
-    <div className="mb-20">
+    <div className="mb-20 mx-auto" style={{ maxWidth: "1500px" }}>
       <h1 className="text-4xl text-center my-10 font-serif font-bold">
         استكشف تصنيفات
       </h1>

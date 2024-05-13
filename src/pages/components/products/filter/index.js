@@ -4,8 +4,8 @@ import React from "react";
 
 const index = ({ data }) => {
   return (
-    <div className=" min-h-screen my-8">
-      <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4 lg:w-11/12 md:w-11/12 w-full mx-auto">
+    <div className=" min-h-screen mt-20 mx-auto" style={{ maxWidth: "1200px" }}>
+      <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4 mx-auto">
         {data.map((filter) => (
           <>
             <div>

@@ -27,17 +27,17 @@ const Home = () => {
   return (
     <div>
       <div className="hero min-h-screen pt-28" style={{ backgroundColor: "#E8FEFF" }}>
-        <div className="hero-content grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-between lg:w-11/12 md:w-11/12 w-full mx-auto">
+        <div className="hero-content grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-between lg:w-11/12 md:w-11/12 w-full mx-auto">
           <img
             src="/top.jpeg"
-            className="xl:max-w-lg md:max-w-lg shadow-2xl lg:order-1 md:order-1 order-2"
+            className="xl:max-w-lg md:max-w-lg shadow-2xl lg:order-1 md:order-2 order-2 mx-auto"
             style={{
               borderRadius: "80px 10px 80px 10px",
               height: "550px",
               width: "700px",
             }}
           />
-          <div className="xl:text-left md:text-left text-center lg:order-2 md:order-2 order-1">
+          <div className="xl:text-left md:text-left text-center lg:order-2 md:order-1 order-1">
             <h1 className="mb-5 lg:text-5xl text-2xl font-bold w-full text-right">
               هواء نقي ومنعش
             </h1>
@@ -94,11 +94,12 @@ const Home = () => {
           className="min-h-screen mt-10"
           style={{ backgroundColor: "#E8FEFF" }}
         >
+          <div   style={{maxWidth: '1300px',}} className="mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold font-serif pt-20">أعمالنا</h1>
-            <p>تتجلى التزامنا بالتميز في الثقة والرضا من عملائنا.</p>
+            <h1 className="text-5xl font-bold pt-20">أعمالنا</h1>
+            <p className="mt-5">تتجلى التزامنا بالتميز في الثقة والرضا من عملائنا.</p>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 justify-around lg:w-10/12 md:w-10/12 w-full mx-auto">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 justify-between mx-auto">
             <div
               style={{
                 backgroundImage: "url(product1.png)",
@@ -108,8 +109,8 @@ const Home = () => {
               }}
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
-              <div className="absolute bottom-0 right-0 p-4 text-white text-right grid grid-cols-2 gap-2">
-                <button className="btn w-12">
+              <div className="absolute bottom-0 right-0 p-2 text-white text-right flex justify-between">
+                <button className="btn mr-5">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
@@ -127,8 +128,8 @@ const Home = () => {
               }}
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
-              <div className="absolute bottom-0 right-0 p-4 text-white text-right grid grid-cols-2 gap-2">
-                <button className="btn w-12">
+              <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
+                <button className="btn mr-5">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
@@ -146,13 +147,13 @@ const Home = () => {
               }}
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
-              <div className="absolute bottom-0 right-0 p-4 text-white text-right grid grid-cols-2 gap-6">
-                <button className="btn w-12 mr-44">
+              <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
+                <button className="btn mr-5">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
-                  <p className="font-bold text-xl">دانكن</p>
-                  <p>وصف للعمل</p>
+                  <p className="font-bold text-xl">اسم الشركة</p>
+                  <p>نظام ضباب ورذاذ كوفي شوب جلسات خارجيه</p>
                 </div>
               </div>
             </div>
@@ -169,6 +170,7 @@ const Home = () => {
               style={{ color: "#2594AF" }}
             ></FaArrowRight>
           </div>
+          </div>
         </div>
       </div>
 
@@ -176,25 +178,25 @@ const Home = () => {
 
       {/* start big image section  */}
 
-      <div>
+      <div style={{maxWidth: '1300px',}} className="mx-auto">
         <div
-          className="lg:w-10/12 md:w-10/12 w-full mx-auto rounded bg-cover text-right mt-10"
+          className=" mx-auto bg-cover rounded-3xl text-right mt-10"
           style={{
-            backgroundImage: "url(pahar.jpeg)",
+            backgroundImage: "url(big-image.png)",
             backgroundRepeat: "no-repeat",
             height: "",
           }}
         >
-          <div className="bg-green-700 bg-opacity-30 ">
+          <div className="rounded-3xl bg-opacity-30 ">
             <div className="lg:w-1/2 md:w-1/2 w-full mx-auto opacity-100">
-              <h2 className="text-xl text-right font-bold text-white py-20">
+              <h2 className="text-xl text-right font-bold text-white py-16">
                 خبراء في أنظمة الضباب والرذاذ. نقدم لكم خدماتنا بكل دقة
                 واحترافية، من تصميم وتركيب الضباب والرذاذ إلى الصيانة. معنا،
                 اشعر بتغيير في الجو في منزلك أو مكان عملك، واستمتع بالراحة
                 والجودة
               </h2>
-              <p className="text-white text-right mt-4">انظمة المدن</p>
-              <p className="text-white text-right pb-5">قسم الضباب والرذاذ</p>
+              <p className="text-white font-bold text-right">انظمة المدن</p>
+              <p className="text-white font-bold text-right pb-20">قسم الضباب والرذاذ</p>
             </div>
           </div>
         </div>
@@ -208,14 +210,17 @@ const Home = () => {
         className="text-center py-16 my-20"
         style={{ backgroundColor: "#044160" }}
       >
-        <div className="text-white lg:w-3/5 md:w-3/5 w-full mx-auto">
-          <h1 className="text-5xl font-bold font-serif mb-5">هواء نقي ومنعش</h1>
-          <h3 className="text-xl font-bold">
+        <div className="text-white lg:w-2/5 md:w-2/5 w-full mx-auto">
+          <h1 className="text-4xl font-bold mb-5">هواء نقي ومنعش</h1>
+          <h3 className="mb-10 mt-4 font-light" style={{fontSize: '20px'}}>
             🔍 هل تبحث عن طرق لتحسين جودة الهواء في منزلك أو مكان عملك؟ اكتشف
-            حلولنا المبتكرة لتقديم بيئة داخلية صحية ومريحة! احصل على استشارة
-            مجانية اليوم واحجز زيارة مجانية لموقعك!
+            حلولنا المبتكرة لتقديم بيئة داخلية صحية ومريحة! احصل على  استشارة
+            مجانية اليوم<br></br> واحجز زيارة مجانية لموقعك!
           </h3>
+          <div className="flex justify-center">
           <button onClick={handleWhatsAppRedirect} className="btn bg-white text-black mt-7">ابدأ الآن</button>
+          <FaArrowRight className="mt-12 ml-8 hover:ml-10"></FaArrowRight>
+          </div>
         </div>
       </div>
 
@@ -223,15 +228,17 @@ const Home = () => {
 
       {/* start Q&A section  */}
 
-      <div>
-        <div className="lg:w-4/5 md:w-4/5 w-full mx-auto mb-20">
-          <h2 className="text-center text-4xl font-bold font-serif">
+      <div style={{maxWidth: '1000px',}} className="mx-auto">
+        <div className="mb-20">
+          <h2 className="text-right text-4xl font-bold font-serif">
             أسئلة شائعة حول كيفية تنقية الهواء وتحسين جودته
           </h2>
           <div>
+          <div style={{borderTop: '1px solid gray'}} className=" opacity-60 mt-8"></div>
+
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 ما هي الاختلافات الرئيسية بين أنظمة الضباب والرذاذ المستخدمة
@@ -253,10 +260,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كيف تساعد تقنية الضباب والرذاذ في تخفيف حرارة الجو في الصيف ؟
@@ -277,10 +285,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 ماهي فوائد تركيب نظام الضباب والرذاذ ؟
@@ -309,10 +318,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كم نسبة تبريد الجو بعد استخدم النظام ؟
@@ -333,10 +343,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 هل يمكنني استخدام أنظمتكم في مكان عملي؟
@@ -348,10 +359,11 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
 
             <div
               tabIndex={0}
-              className="collapse collapse-plus border border-base-300 bg-base-200 text-right mt-3"
+              className="collapse collapse-plus text-right mt-3"
             >
               <div className="collapse-title text-xl font-medium">
                 كيف يمكنني الحصول على أنظمتكم؟

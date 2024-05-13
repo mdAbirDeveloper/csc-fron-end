@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body style={{maxWidth: '1500px',}} className="mx-auto">
+      <body>
         <Main />
         <NextScript />
       </body>
