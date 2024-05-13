@@ -1,35 +1,85 @@
-import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
 import { FaArrowRight } from "react-icons/fa";
-import { useRouter } from "next/router";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
+import Image from "next/image";
 
 const Navber = () => {
   const { user, signOutUser } = useContext(AuthContext);
-  const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
+  const [pathSegments, setPathSegments] = useState([]);
   const router = useRouter();
 
+  useEffect(() => {
+    // Update path segments when the route changes
+    setPathSegments(
+      router.asPath.split("/").filter((segment) => segment !== "")
+    );
+  }, [router.asPath]);
+
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = '+8801832822560';
+    const phoneNumber = "+8801832822560";
     let url;
 
-    // Check if the user is on a mobile device
     if (isMobile) {
       url = `https://wa.me/${phoneNumber}`;
     } else {
-      // If on desktop, redirect to WhatsApp Web
       url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
     }
-    
+
     router.push(url);
+  };
+
+  const translateSegment = (segment) => {
+    switch (segment) {
+      case "products":
+        return "المنتجات"; // Translate "products" to Arabic
+
+      case "components":
+        return "عناصر"; // Translate "products" to Arabic
+
+      case "section":
+        return "الاقسام"; // Translate "products" to Arabic
+
+      case "mistFan":
+        return "مراوح ضباب "; // Translate "products" to Arabic
+
+      case "filter":
+        return "فلاتر"; // Translate "products" to Arabic
+
+      case "hydraulicValves":
+        return "ليات هيدروليك"; // Translate "products" to Arabic
+
+      case "fogNuzzles":
+        return "فوهات الضباب"; // Translate "products" to Arabic
+
+      case "fogAndMistPumps":
+        return "مضخات الضباب والرذاذ"; // Translate "products" to Arabic
+
+      case "connectors":
+        return "الوصلات وملحقاتها"; // Translate "products" to Arabic
+
+      case "question":
+        return "سؤال"; // Translate "products" to Arabic
+
+      case "login":
+        return "تسجيل الدخول"; // Translate "products" to Arabic
+
+      case "deshboard":
+        return "لوحة القيادة"; // Translate "products" to Arabic
+
+      case "contact":
+        return "اتصل بنا"; // Translate "contact" to Arabic
+      default:
+        return segment; // Return segment as is if no translation is provided
+    }
   };
 
   return (
     <div>
-      <div className="navbar bg-base-100 font-bold shadow-xl">
-        <div className="navbar-start">
+      <div className="navbar bg-base-100 font-bold shadow-xl  fixed top-0 w-full z-50">
+        <div className="navbar-start relative">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -52,29 +102,29 @@ const Navber = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-              <Link href={"/"}>الرئيسيه</Link>
-            </li>
-            <li>
-              <Link href={"/components/section"}>الاقسام</Link>
-            </li>
-            <li>
-              <Link href={"/components/products"}>المنتجات</Link>
-            </li>
-            <li>
-              <Link href={"/components/question"}>الاسئلة</Link>
-            </li>
-            <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
-            <li>
-              {user?.uid ? (
-                <>
-                  <button onClick={signOutUser}>
-                    <Link href={"/"}>SignOut</Link>
-                  </button>
-                </>
-              ) : (
-                <Link href={"/login"}>Login</Link>
-              )}
-            </li>
+                <Link href={"/"}>الرئيسيه</Link>
+              </li>
+              <li>
+                <Link href={"/components/الاقسام"}>الاقسام</Link>
+              </li>
+              <li>
+                <Link href={"/components/products"}>المنتجات</Link>
+              </li>
+              <li>
+                <Link href={"/components/question"}>الاسئلة</Link>
+              </li>
+              <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
+              <li>
+                {user?.uid ? (
+                  <>
+                    <button onClick={signOutUser}>
+                      <Link href={"/"}>SignOut</Link>
+                    </button>
+                  </>
+                ) : (
+                  <Link href={"/login"}>Login</Link>
+                )}
+              </li>
             </ul>
           </div>
           <div>
@@ -89,7 +139,7 @@ const Navber = () => {
           </div>
         </div>
 
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex relative">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link href={"/"}>الرئيسيه</Link>
@@ -121,7 +171,7 @@ const Navber = () => {
         <div className="navbar-end relative">
           <div className="">
             <button
-             onClick={handleWhatsAppRedirect}
+              onClick={handleWhatsAppRedirect}
               className="flex btn text-white rounded-3xl"
               style={{ backgroundColor: "#2594AF" }}
             >
@@ -130,6 +180,40 @@ const Navber = () => {
           </div>
         </div>
       </div>
+
+      {/* Breadcrumb navigation */}
+
+      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 mr-4">
+        {pathSegments?.length > 1 && (
+          <ul className="flex text-lg font-serif justify-end">
+            {[...pathSegments]
+              .slice(0, 3)
+              .reverse()
+              .map((segment, index) => (
+                <li key={index}>
+                  {index !== 0 && <span className="mx-2">{"<"} </span>}{" "}
+                  {/* Conditionally render "<" */}
+                  <Link
+                    href={`/${pathSegments.slice(0, index + 1).join("/")}`}
+                    className={
+                      router.pathname ===
+                      `/${pathSegments.slice(0, index + 1).join("/")}`
+                        
+                    }
+                  >
+                    {translateSegment(segment)}
+                  </Link>
+                </li>
+              ))}
+            <li>
+              <Link href="/">
+                <span className="mx-2">{"<"}</span> الصفحة الرئيسية{" "}
+                {/* Translate "Home" to Arabic */}
+              </Link>
+            </li>
+          </ul>
+        )}
+      </nav>
     </div>
   );
 };

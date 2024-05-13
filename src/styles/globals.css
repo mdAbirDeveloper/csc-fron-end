@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styles.css */
+.rating {
+  display: flex;
+  justify-content: end;
+}
+
+.star {
+  color: #999; /* Default star color */
+}
+
+.star-filled {
+  color: #ffc107; /* Filled star color */
+}
+
+.hidden {
+  display: none; /* Hide radio buttons */
+}
