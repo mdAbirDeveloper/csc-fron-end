@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen pt-28" style={{ backgroundColor: "#E8FEFF" }}>
+      <div className="hero min-h-screen py-28" style={{ backgroundColor: "#E8FEFF" }}>
         <div className="hero-content grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-between lg:w-11/12 md:w-11/12 w-full mx-auto">
           <img
             src="/top.jpeg"
