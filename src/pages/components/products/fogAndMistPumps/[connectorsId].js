@@ -176,24 +176,27 @@ const Connectors = () => {
               </div>
 
               {/* reatin sections */}
-              <div className="rating">
-                {[1, 2, 3, 4, 5].map((value) => (
-                  <input
-                    key={value}
-                    type="radio"
-                    name={`rating-${product?._id}`}
-                    value={value}
-                    className={`mask mask-star-2 bg-orange-400 ${
-                      value <= (hoverRating || rating) ? "checked" : ""
-                    }`}
-                    onClick={() => handleRatingClick(value)}
-                    onMouseOver={() => handleMouseOver(value)}
-                    onMouseLeave={handleMouseLeave}
-                  />
-                ))}
-              </div>
+              <div className="mr-3">
+                <div className="rating">
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <input
+                      key={value}
+                      type="radio"
+                      name={`rating-${product?._id}`}
+                      value={value}
+                      className={`rating mask mask-star-2 bg-orange-400 ${
+                        value <= (hoverRating || rating) ? "checked" : ""
+                      }`}
+                      onClick={() => handleRatingClick(value)}
+                      onMouseOver={() => handleMouseOver(value)}
+                      onMouseLeave={handleMouseLeave}
+                    />
+                  ))}
+                </div>
+
                 <p>Average Rating: {averageRating?.toFixed(2)}</p>
                 <p>Total Rating: {totalRating}</p>
+              </div>
             </div>
           </div>
         </div>
