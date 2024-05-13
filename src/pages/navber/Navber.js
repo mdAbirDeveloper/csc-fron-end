@@ -183,9 +183,9 @@ const Navber = () => {
 
       {/* Breadcrumb navigation */}
 
-      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0">
+      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0 lg:block md:block hidden">
         {pathSegments?.length > 1 && (
-          <ul className="flex lg:text-lg md:text-lg text-xm font-serif justify-end">
+          <ul className="flex  justify-end">
             {[...pathSegments]
               .slice(0, 3)
               .reverse()
