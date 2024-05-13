@@ -3,7 +3,7 @@ import React from "react";
 
 const DeshboardLayout = ({ children }) => {
   return (
-    <div className="text-center mt-20">
+    <div className="text-center" dir="ltr">
       <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/mistFan"}>
         Add Mist Fan
       </Link>
