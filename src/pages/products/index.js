@@ -16,7 +16,7 @@ const index = ({data}) => {
               <div className="card-body">
                 <h2 className="text-center text-xl font-bold font-serif">{products?.name}</h2>
                 <div className="card-actions justify-center">
-                  <Link href={`/components/products/${products._id}`}>
+                  <Link href={`/products/${products._id}`}>
                     <button className="btn btn-primary">انظر التفاصيل</button>
                   </Link>
                 </div>

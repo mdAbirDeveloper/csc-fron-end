@@ -80,8 +80,8 @@ const Navber = () => {
   };
 
   return (
-    <div className=" mx-auto z-50 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8 sticky top-0">
-      <div style={{ maxWidth: "1300px" }} className=" mx-auto">
+    <div  className=" mx-auto z-50 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8 sticky top-0">
+      <div style={{ maxWidth: "1300px" }} className="mx-auto">
         <div className="navbar font-bold">
           <div className="navbar-start">
             <div className="dropdown">
@@ -113,13 +113,13 @@ const Navber = () => {
                   <Link href={"/"}>الرئيسيه</Link>
                 </li>
                 <li>
-                  <Link href={"/components/section"}>الاقسام</Link>
+                  <Link href={"/components"}>الاقسام</Link>
                 </li>
                 <li>
-                  <Link href={"/components/products"}>المنتجات</Link>
+                  <Link href={"/products"}>المنتجات</Link>
                 </li>
                 <li>
-                  <Link href={"/components/question"}>الاسئلة</Link>
+                  <Link href={"/question"}>الاسئلة</Link>
                 </li>
                 <li>
                   {user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}
@@ -155,13 +155,13 @@ const Navber = () => {
                 <Link href={"/"}>الرئيسيه</Link>
               </li>
               <li>
-                <Link href={"/components/section"}>الاقسام</Link>
+                <Link href={"/components"}>الاقسام</Link>
               </li>
               <li>
-                <Link href={"/components/products"}>المنتجات</Link>
+                <Link href={"/products"}>المنتجات</Link>
               </li>
               <li>
-                <Link href={"/components/question"}>الاسئلة</Link>
+                <Link href={"/question"}>الاسئلة</Link>
               </li>
               <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
               <li>
@@ -185,7 +185,7 @@ const Navber = () => {
                 className="flex btn text-white rounded-3xl"
                 style={{ backgroundColor: "#2594AF" }}
               >
-                Contact Us <FaArrowRight className="mt-1 ml-1"></FaArrowRight>
+              <FaArrowRight className="mt-1 ml-1"></FaArrowRight>  Contact Us 
               </button>
             </div>
           </div>
@@ -195,9 +195,9 @@ const Navber = () => {
 
         <nav className="breadcrumb text-sm p-2 lg:mr-4 md:mr-4 mr-0">
           {pathSegments?.length > 1 && (
-            <ul className="flex  justify-end">
+            <ul className="flex justify-start">
               {[...pathSegments]
-                .slice(0, 3)
+                .slice(0, 2)
                 .reverse()
                 .map((segment, index) => (
                   <li key={index}>

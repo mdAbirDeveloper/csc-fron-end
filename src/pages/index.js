@@ -2,9 +2,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { FaArrowRight, FaPlay } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
-import Category from "./components/Category";
 import { useRouter } from "next/router";
 import { isMobile } from 'react-device-detect';
+import Category from "./Category";
 
 const Home = () => {
   const router = useRouter();
@@ -55,23 +55,25 @@ const Home = () => {
                 استشاره مجانية
               </button>
             </div>
-            <div className="grid grid-cols-3 mt-10">
+            <div className="flex mt-10">
               <div>
-                <h1 className="text-3xl font-bold flex">
+                <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
                   87
-                  <IoIosArrowForward className="ml-10 mt-6 opacity-50" />
                 </h1>
                 <p>اعمالنا</p>
               </div>
+              
+              <IoIosArrowForward className="lg:ml-10 md:ml-5 ml-2 mt-4 opacity-50 text-4xl" />
               <div>
-                <h1 className="text-3xl font-bold flex">
+                <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
                   206
-                  <IoIosArrowForward className="ml-10 mt-6 opacity-50" />
                 </h1>
                 <p>العملاء</p>
               </div>
+              
+              <IoIosArrowForward className="lg:ml-10 md:ml-5 ml-2 mt-4 opacity-50 text-4xl" />
               <div>
-                <h1 className="text-3xl font-bold">8</h1>
+                <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">8</h1>
                 <p>نحن فخورين بالجوائز اللي حصلنا عليه</p>
               </div>
             </div>
@@ -110,7 +112,7 @@ const Home = () => {
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
               <div className="absolute bottom-0 right-0 p-2 text-white text-right flex justify-between">
-                <button className="btn mr-5">
+                <button className="btn ml-10">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
@@ -129,7 +131,7 @@ const Home = () => {
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
               <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
-                <button className="btn mr-5">
+                <button className="btn ml-5">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
@@ -148,7 +150,7 @@ const Home = () => {
               className="bg-cover rounded overflow-hidden hover:scale-105 relative"
             >
               <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
-                <button className="btn mr-5">
+                <button className="btn ml-5">
                   <FaPlay></FaPlay>{" "}
                 </button>
                 <div>
@@ -218,8 +220,8 @@ const Home = () => {
             مجانية اليوم<br></br> واحجز زيارة مجانية لموقعك!
           </h3>
           <div className="flex justify-center">
-          <button onClick={handleWhatsAppRedirect} className="btn bg-white text-black mt-7">ابدأ الآن</button>
           <FaArrowRight className="mt-12 ml-8 hover:ml-10"></FaArrowRight>
+          <button onClick={handleWhatsAppRedirect} className="btn bg-white text-black mt-7">ابدأ الآن</button>
           </div>
         </div>
       </div>

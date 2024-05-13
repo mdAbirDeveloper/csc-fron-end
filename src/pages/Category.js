@@ -16,7 +16,7 @@ const Category = () => {
         </p>
         <div>
           <div className="grid xl:grid-cols-6 mt-10 md:grid-cols-4 grid-cols-2 gap-3 justify-around relative group">
-            <Link href={"components/products/mistFan"}>
+            <Link href={"components/mistFan"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{
@@ -32,7 +32,7 @@ const Category = () => {
                 </p>
               </div>
             </Link>
-            <Link href={"components/products/filter"}>
+            <Link href={"components/filter"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{
@@ -48,7 +48,7 @@ const Category = () => {
                 </p>
               </div>
             </Link>
-            <Link href={"components/products/hydraulicValves"}>
+            <Link href={"components/hydraulicValves"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{
@@ -64,7 +64,7 @@ const Category = () => {
                 </p>
               </div>
             </Link>
-            <Link href={"components/products/fogNuzzles"}>
+            <Link href={"components/fogNuzzles"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{
@@ -80,7 +80,7 @@ const Category = () => {
                 </p>
               </div>
             </Link>
-            <Link href={"components/products/fogAndMistPumps"}>
+            <Link href={"components/fogAndMistPumps"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{
@@ -96,7 +96,7 @@ const Category = () => {
                 </p>
               </div>
             </Link>
-            <Link href={"components/products/connectors"}>
+            <Link href={"components/connectors"}>
               <div
                 className="text-center bg-cover relative overflow-hidden transition-transform duration-300 transform hover:scale-105"
                 style={{

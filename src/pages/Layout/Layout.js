@@ -1,4 +1,5 @@
-import Footer from "../components/Footer";
+
+import Footer from "../Footer";
 import Navber from "../navber/Navber";
 
 

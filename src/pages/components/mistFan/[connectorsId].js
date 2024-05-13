@@ -21,7 +21,6 @@ const Connectors = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [totalRating, setTotalRating] = useState(0)
 
-
   const handleWhatsAppRedirect = () => {
     const phoneNumber = '+8801832822560';
     let url;
@@ -131,7 +130,7 @@ const Connectors = () => {
         <div className="lg:order-1 md:order-1 order-2">
           <div className="text-right">
             <h1 className="text-4xl font-serif font-bold">{product.name}</h1>
-            <div className="flex justify-end text-2xl font-bold text-red-600">
+            <div className="flex justify-start text-2xl font-bold text-red-600">
               <p className="line-through opacity-55">${product.oldprice}</p>
               <p className="ml-3 text-green-600">${product.price}</p>
             </div>
@@ -147,20 +146,20 @@ const Connectors = () => {
             <div className="grid grid-cols-2 justify-between">
                 <div className="grid grid-cols-3 ml-3 justify-center items-center mr-3 mt-3 w-36 border">
                   <button
-                    className="font-bold py-2 px-4 border-r-2 w-10"
+                    className="font-bold py-2 px-4  w-10"
                     onClick={decrement}
                   >
                     <FaMinus />
                   </button>
                   <span className="mx-4 text-xl font-bold text-center">{count}</span>
                   <button
-                    className="font-bold py-2 px-4 border-l-2 w-10"
+                    className="font-bold py-2 px-4  w-10"
                     onClick={increment}
                   >
                     <FaPlus />
                   </button>
                 </div>
-                <div className="ml-36">
+                <div className="mr-36">
                   <p className="mt-4">الكمية</p>
                 </div>
               </div>
@@ -176,7 +175,7 @@ const Connectors = () => {
               </div>
 
               {/* reatin sections */}
-              <div className="mr-3">
+              <div dir="ltr" className="mr-3">
                 <div className="rating">
                   {[1, 2, 3, 4, 5].map((value) => (
                     <input
