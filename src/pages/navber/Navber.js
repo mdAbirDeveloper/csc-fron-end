@@ -101,30 +101,30 @@ const Navber = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <Link href={"/"}>الرئيسيه</Link>
-              </li>
-              <li>
-                <Link href={"/components/الاقسام"}>الاقسام</Link>
-              </li>
-              <li>
-                <Link href={"/components/products"}>المنتجات</Link>
-              </li>
-              <li>
-                <Link href={"/components/question"}>الاسئلة</Link>
-              </li>
-              <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
-              <li>
-                {user?.uid ? (
-                  <>
-                    <button onClick={signOutUser}>
-                      <Link href={"/"}>SignOut</Link>
-                    </button>
-                  </>
-                ) : (
-                  <Link href={"/login"}>Login</Link>
-                )}
-              </li>
+               <li>
+              <Link href={"/"}>الرئيسيه</Link>
+            </li>
+            <li>
+              <Link href={"/components/section"}>الاقسام</Link>
+            </li>
+            <li>
+              <Link href={"/components/products"}>المنتجات</Link>
+            </li>
+            <li>
+              <Link href={"/components/question"}>الاسئلة</Link>
+            </li>
+            <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
+            <li>
+              {user?.uid ? (
+                <>
+                  <button onClick={signOutUser}>
+                    <Link href={"/"}>SignOut</Link>
+                  </button>
+                </>
+              ) : (
+                <Link href={"/login"}>Login</Link>
+              )}
+            </li>
             </ul>
           </div>
           <div>
