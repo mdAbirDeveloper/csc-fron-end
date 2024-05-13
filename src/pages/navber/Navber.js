@@ -35,6 +35,9 @@ const Navber = () => {
     switch (segment) {
       case "products":
         return "المنتجات"; // Translate "products" to Arabic
+        
+      case "allProduct":
+        return "جميع المنتجات"; // Translate "products" to Arabic
 
       case "components":
         return "عناصر"; // Translate "products" to Arabic
@@ -183,7 +186,7 @@ const Navber = () => {
 
       {/* Breadcrumb navigation */}
 
-      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0 lg:block md:block hidden">
+      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0">
         {pathSegments?.length > 1 && (
           <ul className="flex  justify-end">
             {[...pathSegments]
