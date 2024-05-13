@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaPlay } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { useRouter } from "next/router";
 import { isMobile } from 'react-device-detect';
@@ -167,10 +167,10 @@ const Home = () => {
             >
               عرض جميع التقييمات من عملائنا
             </h2>
-            <FaArrowRight
-              className="mt-2 ml-2"
+            <FaArrowLeft
+              className="mt-2 mr-2"
               style={{ color: "#2594AF" }}
-            ></FaArrowRight>
+            ></FaArrowLeft>
           </div>
           </div>
         </div>
@@ -220,8 +220,8 @@ const Home = () => {
             مجانية اليوم<br></br> واحجز زيارة مجانية لموقعك!
           </h3>
           <div className="flex justify-center">
-          <FaArrowRight className="mt-12 ml-8 hover:ml-10"></FaArrowRight>
           <button onClick={handleWhatsAppRedirect} className="btn bg-white text-black mt-7">ابدأ الآن</button>
+          <FaArrowLeft className="mt-12 mr-8 hover:mr-10"></FaArrowLeft>
           </div>
         </div>
       </div>
