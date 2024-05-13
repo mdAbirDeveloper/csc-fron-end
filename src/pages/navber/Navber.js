@@ -101,30 +101,30 @@ const Navber = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-               <li>
-              <Link href={"/"}>الرئيسيه</Link>
-            </li>
-            <li>
-              <Link href={"/components/section"}>الاقسام</Link>
-            </li>
-            <li>
-              <Link href={"/components/products"}>المنتجات</Link>
-            </li>
-            <li>
-              <Link href={"/components/question"}>الاسئلة</Link>
-            </li>
-            <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
-            <li>
-              {user?.uid ? (
-                <>
-                  <button onClick={signOutUser}>
-                    <Link href={"/"}>SignOut</Link>
-                  </button>
-                </>
-              ) : (
-                <Link href={"/login"}>Login</Link>
-              )}
-            </li>
+              <li>
+                <Link href={"/"}>الرئيسيه</Link>
+              </li>
+              <li>
+                <Link href={"/components/section"}>الاقسام</Link>
+              </li>
+              <li>
+                <Link href={"/components/products"}>المنتجات</Link>
+              </li>
+              <li>
+                <Link href={"/components/question"}>الاسئلة</Link>
+              </li>
+              <li>{user?.uid && <Link href={"/deshboard"}>DashBoard</Link>}</li>
+              <li>
+                {user?.uid ? (
+                  <>
+                    <button onClick={signOutUser}>
+                      <Link href={"/"}>SignOut</Link>
+                    </button>
+                  </>
+                ) : (
+                  <Link href={"/login"}>Login</Link>
+                )}
+              </li>
             </ul>
           </div>
           <div>
@@ -191,14 +191,15 @@ const Navber = () => {
               .reverse()
               .map((segment, index) => (
                 <li key={index}>
-                  {index !== 0 && <span className="lg:mx-2 md:mx-2 mx-0">{"<"} </span>}{" "}
+                  {index !== 0 && (
+                    <span className="lg:mx-2 md:mx-2 mx-0">{"<"} </span>
+                  )}{" "}
                   {/* Conditionally render "<" */}
                   <Link
                     href={`/${pathSegments.slice(0, index + 1).join("/")}`}
                     className={
                       router.pathname ===
                       `/${pathSegments.slice(0, index + 1).join("/")}`
-                        
                     }
                   >
                     {translateSegment(segment)}
@@ -207,8 +208,8 @@ const Navber = () => {
               ))}
             <li>
               <Link href="/">
-                <span className="lg:mx-2 md:mx-2 mx-0">{"<"}</span> الصفحة الرئيسية{" "}
-                {/* Translate "Home" to Arabic */}
+                <span className="lg:mx-2 md:mx-2 mx-0">{"<"}</span> الصفحة
+                الرئيسية {/* Translate "Home" to Arabic */}
               </Link>
             </li>
           </ul>
