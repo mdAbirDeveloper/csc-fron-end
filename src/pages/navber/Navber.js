@@ -183,15 +183,15 @@ const Navber = () => {
 
       {/* Breadcrumb navigation */}
 
-      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 mr-4">
+      <nav className="breadcrumb bg-base-100 text-sm p-2 mt-20 lg:mr-4 md:mr-4 mr-0">
         {pathSegments?.length > 1 && (
-          <ul className="flex text-lg font-serif justify-end">
+          <ul className="flex lg:text-lg md:text-lg text-xm font-serif justify-end">
             {[...pathSegments]
               .slice(0, 3)
               .reverse()
               .map((segment, index) => (
                 <li key={index}>
-                  {index !== 0 && <span className="mx-2">{"<"} </span>}{" "}
+                  {index !== 0 && <span className="lg:mx-2 md:mx-2 mx-0">{"<"} </span>}{" "}
                   {/* Conditionally render "<" */}
                   <Link
                     href={`/${pathSegments.slice(0, index + 1).join("/")}`}
@@ -207,7 +207,7 @@ const Navber = () => {
               ))}
             <li>
               <Link href="/">
-                <span className="mx-2">{"<"}</span> الصفحة الرئيسية{" "}
+                <span className="lg:mx-2 md:mx-2 mx-0">{"<"}</span> الصفحة الرئيسية{" "}
                 {/* Translate "Home" to Arabic */}
               </Link>
             </li>
