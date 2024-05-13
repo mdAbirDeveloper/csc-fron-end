@@ -3,7 +3,7 @@ import React from "react";
 const index = () => {
   return (
     <div>
-      <div style={{maxWidth: '1500px',}} className="mx-auto mt-20">
+      <div style={{maxWidth: '1200px',}} className="mx-auto mt-20">
         <div className="mb-20">
           <h2 className="text-right text-4xl font-bold font-serif">
             أسئلة شائعة حول كيفية تنقية الهواء وتحسين جودته
