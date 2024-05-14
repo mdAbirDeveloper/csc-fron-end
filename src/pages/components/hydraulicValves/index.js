@@ -35,7 +35,7 @@ export default index;
 
 export async function getServerSideProps() {
   // Fetch data from an API
-  const res = await fetch("https://csc-server-again.vercel.app/hydrulicValves");
+  const res = await fetch("https://csc-server-again.vercel.app/hydraulicValves");
   const data = await res.json();
 
   // Pass the fetched data as props to the component

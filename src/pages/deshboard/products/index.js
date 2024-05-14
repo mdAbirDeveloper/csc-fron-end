@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import DeshboardLayout from "../DeshboardLayout";
 import { useForm } from "react-hook-form";
+import Head from "next/head";
 
 const index = () => {
   const [submited, setSubmited] = useState("");
@@ -12,9 +13,8 @@ const index = () => {
     formState: { errors },
   } = useForm();
 
-
   const onSubmit = async (data) => {
-    setLoading(true)
+    setLoading(true);
     //console.log(data);
 
     const formData = new FormData();
@@ -33,9 +33,8 @@ const index = () => {
           body: formData,
         }).then((res) => res.json())
       );
-      
-      setSubmited("Product added successfully")
-      setLoading(false);
+
+
       formData.delete("image"); // Clear formData for the next image
     }
 
@@ -46,7 +45,8 @@ const index = () => {
 
       const project = {
         name: data.name,
-        descriptions: data.description,
+        category : data.category,
+        descriptions: data.descriptions,
         price: data.price,
         oldprice: data.oldprice,
         images: imageUrls, // Array of uploaded image URLs
@@ -55,15 +55,20 @@ const index = () => {
       //console.log(project);
 
       // Send data to MongoDB (modify endpoint and format if needed)
-      const response = await fetch("https://csc-server-again.vercel.app/products", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(project),
-      });
+      const response = await fetch(
+        "https://csc-server-again.vercel.app/products",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(project),
+        }
+      );
 
       const result = await response.json();
+      setSubmited("Product added successfully");
+      setLoading(false);
       //console.log(result);
     } catch (error) {
       console.error("Error uploading images or sending data:", error);
@@ -73,10 +78,29 @@ const index = () => {
 
   return (
     <div>
+    <Head>
+      <title>انظمة المدن للضباب والرذاذ</title>
+    </Head>
       <h1 className="text-3xl mt-8 text-center font-bold uppercase text-green-500">
         Add Your Product
       </h1>
-      <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+      <form className="card-body w-4/5 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-control">
+          <select
+            className="select w-full input input-bordered"
+            {...register("category")}
+          >
+            <option disabled selected>
+              Pick your product category
+            </option>
+            <option value="filter">Filter</option>
+            <option value="connectors">Connectors</option>
+            <option value="fogAndMistPumps">Fog and Mist Pumps</option>
+            <option value="fogNuzzles">Fog Nuzzles</option>
+            <option value="hydraulicValves">Hydraulic Valves</option>
+            <option value="mistFan">Mist Fan</option>
+          </select>
+        </div>
         <div className="form-control">
           <input
             type="text"
@@ -103,36 +127,42 @@ const index = () => {
           />
         </div>
         <div className="form-control">
-          <input
+          <textarea
             type="text"
             placeholder="write your product description"
             className="input input-bordered"
             required
-            {...register("description")}
+            {...register("descriptions")}
           />
         </div>
         <div>
           <label>Choose images of your product (multiple allowed)</label>
-          <input type="file" {...register("images", { required: true })} multiple />
+          <input
+            type="file"
+            {...register("images", { required: true })}
+            multiple
+          />
           {errors.images && <span>This field is required</span>}
         </div>
         <div className="form-control mt-6">
-        <p className="text-xl uppercase font-serif text-green-500">
+          <p className="text-xl uppercase font-serif text-green-500">
             {submited}
           </p>
-          {
-            loading ? <button
-            className="btn btn-primary font-bold text-white"
-            type="submit"
-          >
-            ........
-          </button> : <button
-            className="btn btn-primary font-bold text-white"
-            type="submit"
-          >
-            Add Product
-          </button>
-          }
+          {loading ? (
+            <button
+              className="btn btn-primary font-bold text-white"
+              type="submit"
+            >
+              ........
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary font-bold text-white"
+              type="submit"
+            >
+              Add Product
+            </button>
+          )}
         </div>
       </form>
     </div>

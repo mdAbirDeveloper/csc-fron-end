@@ -4,66 +4,8 @@ import React from "react";
 const DeshboardLayout = ({ children }) => {
   return (
     <div className="text-center" dir="ltr">
-      <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/mistFan"}>
-        Add Mist Fan
-      </Link>
-      <Link className="btn bg-yellow-400 mt-3 mr-3" href={"/deshboard/removeFan"}>
-        remove MistFan
-      </Link>
-
-      <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/connectors"}>
-        Add Connectors
-      </Link>
-      <Link className="btn bg-yellow-400  mt-3 mr-3" href={"/deshboard/removeConnectors"}>
-        Remove Connectors
-      </Link>
-
-      <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/filter"}>
-        Add Filters
-      </Link>
-      <Link className="btn bg-yellow-400  mt-3 mr-3" href={"/deshboard/removeFilter"}>
-        remove Filters
-      </Link>
-
-
-      <Link
-        className="btn btn-info mt-3 mr-3"
-        href={"/deshboard/fogAndMistPumps"}
-      >
-        Add Pumps
-      </Link>
-      <Link
-        className="btn bg-yellow-400  mt-3 mr-3"
-        href={"/deshboard/removePumps"}
-      >
-        Remove Pumps
-      </Link>
-
-      <Link className="btn btn-info mt-3 mr-3" href={"/deshboard/fogNuzzles"}>
-        Add Nuzzles
-      </Link>
-      <Link className="btn bg-yellow-400  mt-3 mr-3" href={"/deshboard/removeNuzzles"}>
-        Remove Nuzzles
-      </Link>
-
-      <Link
-        className="btn btn-info mt-3 mr-3"
-        href={"/deshboard/hydraulicValves"}
-      >
-        Add valves
-      </Link>
-      <Link
-        className="btn bg-yellow-400  mt-3 mr-3"
-        href={"/deshboard/removeValves"}
-      >
-        Remove valves
-      </Link>
-      <Link
-        className="btn btn-warning mt-3 mr-3"
-        href={"/deshboard/products/remove"}
-      >
-        Manage All products
-      </Link>
+      <Link className="btn btn-primary" href={'/deshboard/products'}>add Product</Link>
+      <Link className="btn bg-yellow-500 ml-10" href={'/deshboard/products/remove'}>remove Product</Link>
       <div>{children}</div>
     </div>
   );
