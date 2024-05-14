@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-title-in-document-head */
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -10,7 +9,6 @@ export default function Document() {
           rel="icon"
           href="https://cdn.wegic.ai/assets/onepage/thread/icon/35eadb21-f653-4d40-b4f0-fb96d17d3bd3.png"
         />
-        <title>انظمة المدن للضباب والرذاذ</title>
         <meta
           name="description"
           content="🍃 مع أنظمتنا المتقدمة للضباب والرذاذ، نقدم حلولًا فعالة لتنقية الهواء وتحسين جودته. 🏡 اكتشف كيف يمكن تحويل منزلك ومكان عملك إلى ملاذ صحي."

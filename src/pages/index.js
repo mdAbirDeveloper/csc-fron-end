@@ -5,6 +5,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRouter } from "next/router";
 import { isMobile } from 'react-device-detect';
 import Category from "./Category";
+import Head from "next/head";
 
 const Home = () => {
   const router = useRouter();
@@ -26,6 +27,9 @@ const Home = () => {
 
   return (
     <div>
+      <Head>
+        <title>انظمة المدن للضباب والرذاذ</title>
+      </Head>
       <div className="hero min-h-screen py-28" style={{ backgroundColor: "#E8FEFF" }}>
         <div className="hero-content grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-between lg:w-11/12 md:w-11/12 w-full mx-auto">
           <img
