@@ -7,9 +7,6 @@ const Category = () => {
   //console.log(data);
   return (
     <div>
-      <Head>
-        <title>انظمة المدن للضباب والرذاذ</title>
-      </Head>
       <div style={{ maxWidth: "1300px" }} className="mx-auto my-32">
         <div className="mx-auto lg:w-full md:w-full w-11/12">
           <h1 className="text-center my-6 font-bold xl:text-4xl md:text-3xl text-2xl xl:w-3/4 md:w-3/4 w-full mx-auto py-2">
