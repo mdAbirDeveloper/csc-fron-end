@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import Image from "next/image";
 
@@ -185,7 +185,7 @@ const Navber = () => {
                 className="flex btn text-white rounded-3xl"
                 style={{ backgroundColor: "#2594AF" }}
               >
-              <FaArrowRight className="mt-1 ml-1"></FaArrowRight>  Contact Us 
+               اتصل بنا <FaArrowLeft className="mt-1 ml-1"></FaArrowLeft>
               </button>
             </div>
           </div>

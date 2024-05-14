@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import { FaArrowLeft, FaArrowRight, FaPlay } from "react-icons/fa";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRouter } from "next/router";
 import { isMobile } from 'react-device-detect';
 import Category from "./Category";
@@ -46,7 +46,7 @@ const Home = () => {
               الهواء وتحسين جودته. 🏡 اكتشف كيف يمكن لمنتجاتنا وخدماتنا تحويل
               منزلك ومكان عملك إلى ملاذ صحي.
             </p>
-            <div className="mt-10 flex justify-end">
+            <div className="mt-10 flex justify-start">
               <button
                onClick={handleWhatsAppRedirect}
                 className="flex btn text-white rounded-3xl"
@@ -63,7 +63,7 @@ const Home = () => {
                 <p>اعمالنا</p>
               </div>
               
-              <IoIosArrowForward className="lg:ml-10 md:ml-5 ml-2 mt-4 opacity-50 text-4xl" />
+              <IoIosArrowBack className="lg:mx-5 md:mr-5 mx-2 mt-4 opacity-50 text-4xl" />
               <div>
                 <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
                   206
@@ -71,9 +71,9 @@ const Home = () => {
                 <p>العملاء</p>
               </div>
               
-              <IoIosArrowForward className="lg:ml-10 md:ml-5 ml-2 mt-4 opacity-50 text-4xl" />
+              <IoIosArrowBack className="lg:mx-5 md:mx-5 mx-2 mt-4 opacity-50 text-4xl" />
               <div>
-                <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">8</h1>
+                <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">8</h1>
                 <p>نحن فخورين بالجوائز اللي حصلنا عليه</p>
               </div>
             </div>
