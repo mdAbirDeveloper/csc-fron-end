@@ -101,15 +101,14 @@ const Home = () => {
             <h1 className="text-5xl font-bold pt-20">أعمالنا</h1>
             <p className="mt-5">تتجلى التزامنا بالتميز في الثقة والرضا من عملائنا.</p>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 justify-between mx-auto">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 justify-between mx-auto ">
             <div
               style={{
                 backgroundImage: "url(product1.png)",
                 backgroundRepeat: "no-repeat",
-                height: "500px",
                 transition: "transform 0.3s ease-in-out", // Transition for zoom effect
               }}
-              className="bg-cover rounded overflow-hidden hover:scale-105 relative"
+              className="bg-cover rounded overflow-hidden hover:scale-105 relative vedio-section"
             >
               <div className="absolute bottom-0 right-0 p-2 text-white text-right flex justify-between">
                 <button className="btn ml-10">
@@ -125,10 +124,9 @@ const Home = () => {
               style={{
                 backgroundImage: "url(product2.png)",
                 backgroundRepeat: "no-repeat",
-                height: "500px",
                 transition: "transform 0.3s ease-in-out", // Transition for zoom effect
               }}
-              className="bg-cover rounded overflow-hidden hover:scale-105 relative"
+              className="bg-cover rounded overflow-hidden hover:scale-105 relative vedio-section"
             >
               <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
                 <button className="btn ml-5">
@@ -144,10 +142,9 @@ const Home = () => {
               style={{
                 backgroundImage: "url(product3.png)",
                 backgroundRepeat: "no-repeat",
-                height: "500px",
                 transition: "transform 0.3s ease-in-out", // Transition for zoom effect
               }}
-              className="bg-cover rounded overflow-hidden hover:scale-105 relative"
+              className="bg-cover rounded overflow-hidden hover:scale-105 relative vedio-section"
             >
               <div className="absolute bottom-0 right-0 p-4 text-white text-right flex justify-between">
                 <button className="btn ml-5">

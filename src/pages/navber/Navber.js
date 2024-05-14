@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import Image from "next/image";
 
@@ -29,6 +29,12 @@ const Navber = () => {
     }
 
     router.push(url);
+  };
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const translateSegment = (segment) => {
@@ -80,34 +86,56 @@ const Navber = () => {
   };
 
   return (
-    <div  className=" mx-auto z-50 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8 sticky top-0">
+    <div className=" mx-auto z-50 w-full h-16 bg-white/80 backdrop-blur-xl dark:bg-black/80 md:px-8 sticky top-0">
       <div style={{ maxWidth: "1300px" }} className="mx-auto">
         <div className="navbar font-bold">
           <div className="navbar-start">
-            <div className="dropdown">
+            <div className="dropdown w-full">
               <div
                 tabIndex={0}
                 role="button"
                 className="btn btn-ghost lg:hidden"
+                onClick={toggleMenu}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
+                {isMenuOpen ? (
+                  // Close icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  // Menu icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-full ${
+                  isMenuOpen ? "block" : "hidden"
+                }`}
               >
                 <li>
                   <Link href={"/"}>الرئيسيه</Link>
@@ -185,7 +213,7 @@ const Navber = () => {
                 className="flex btn text-white rounded-3xl"
                 style={{ backgroundColor: "#2594AF" }}
               >
-               اتصل بنا <FaArrowLeft className="mt-1 ml-1"></FaArrowLeft>
+                اتصل بنا <FaArrowLeft className="mt-1 ml-1"></FaArrowLeft>
               </button>
             </div>
           </div>
