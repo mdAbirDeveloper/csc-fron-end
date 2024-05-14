@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect,useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authentication/Authentication";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import Image from "next/image";
 
@@ -30,12 +30,11 @@ const Navber = () => {
 
     router.push(url);
   };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen); // Toggle menu state
+  // };
 
   const translateSegment = (segment) => {
     switch (segment) {
@@ -90,13 +89,15 @@ const Navber = () => {
       <div style={{ maxWidth: "1300px" }} className="mx-auto">
         <div className="navbar font-bold">
           <div className="navbar-start">
-            <div className="dropdown w-full">
+            
+            <div className="dropdown">
               <div
                 tabIndex={0}
                 role="button"
                 className="btn btn-ghost lg:hidden"
-                onClick={toggleMenu}
+                // onClick={toggleMenu}
               >
+                {/* Icon */}
                 {isMenuOpen ? (
                   // Close icon
                   <svg
@@ -105,6 +106,7 @@ const Navber = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    onClick={()=> setIsMenuOpen(false)}
                   >
                     <path
                       strokeLinecap="round"
@@ -121,6 +123,7 @@ const Navber = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    onClick={()=> setIsMenuOpen(true)}
                   >
                     <path
                       strokeLinecap="round"
@@ -133,9 +136,7 @@ const Navber = () => {
               </div>
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-full ${
-                  isMenuOpen ? "block" : "hidden"
-                }`}
+                className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${isMenuOpen ? 'block' : 'hidden'}`}
               >
                 <li>
                   <Link href={"/"}>الرئيسيه</Link>
@@ -165,6 +166,7 @@ const Navber = () => {
                 </li>
               </ul>
             </div>
+
             <div>
               <Image
                 src="/logo.png"
