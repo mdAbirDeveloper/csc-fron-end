@@ -126,7 +126,7 @@ const Connectors = () => {
       </div>
     );
   }
-
+// this line are jsut for check
   return (
     <div className="min-h-screen mx-auto mt-20" style={{ maxWidth: "1200px" }}>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 my-5">
