@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import { FaMinus, FaPlus } from "react-icons/fa";
+import StarRatings from "react-star-ratings";
 
 const Connectors = () => {
   const router = useRouter();
@@ -178,19 +179,18 @@ const Connectors = () => {
               {/* reatin sections */}
               <div dir="ltr" className="mr-3">
                 <div className="rating">
-                  {[1, 2, 3, 4, 5].map((value) => (
-                    <input
-                      key={value}
-                      type="radio"
-                      name={`rating-${product?._id}`}
-                      value={value}
-                      className={`rating mask mask-star-2 bg-orange-400 ${
-                        value <= (hoverRating || rating) ? "checked" : ""
-                      }`}
-                      onClick={() => handleRatingClick(value)}
-                      onMouseOver={() => handleMouseOver(value)}
-                      onMouseLeave={handleMouseLeave}
-                    />
+                {[1].map((value) => (
+                    <StarRatings
+                    key={value}
+                    rating={rating} // Set the current rating value
+                    changeRating={handleRatingClick} // Function to handle rating change
+                    starRatedColor="orange" // Color of the filled stars
+                    starHoverColor="orange" // Color of the stars when hovered
+                    starDimension="25px" // Size of the stars
+                    starSpacing="2px" // Spacing between stars
+                    onHover={handleMouseOver} // Function to handle mouseover event
+                    onHoverOut={handleMouseLeave} // Function to handle mouseleave event
+                  />
                   ))}
                 </div>
 
