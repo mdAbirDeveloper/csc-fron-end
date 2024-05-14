@@ -4,9 +4,6 @@ import React from "react";
 const index = () => {
   return (
     <div>
-    <Head>
-      <title>انظمة المدن للضباب والرذاذ</title>
-    </Head>
       <div style={{maxWidth: '1200px',}} className="mx-auto mt-20">
         <div className="mb-20">
           <h2 className="text-right text-4xl font-bold font-serif">

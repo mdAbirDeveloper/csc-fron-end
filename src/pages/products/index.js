@@ -6,9 +6,6 @@ import React from "react";
 const index = ({ data }) => {
   return (
     <div>
-    <Head>
-      <title>انظمة المدن للضباب والرذاذ</title>
-    </Head>
       <div
         style={{ maxWidth: "1300px" }}
         className=" min-h-screen my-8 mt-20 mx-auto"

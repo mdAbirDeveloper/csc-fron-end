@@ -38,9 +38,6 @@ export default function Login() {
 
   return (
     <div>
-    <Head>
-      <title>انظمة المدن للضباب والرذاذ</title>
-    </Head>
       <div dir="ltr">
         <div className="hero min-h-screen bg-blue-200 xl:w-3/4 md:w-3/4 w-full mx-auto rounded-xl">
           <div className="hero-content flex-col lg:flex-row-reverse">
