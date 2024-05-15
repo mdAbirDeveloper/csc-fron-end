@@ -20,3 +20,4 @@ Crawl-delay: 10
 Sitemap: https://csc-fron-end.vercel.app/sitemap.xml
 
 # Auto generated, go to SEO Tools > Robots.txt Editor to change this
+ditor to change this
