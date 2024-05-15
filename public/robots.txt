@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /deshboard/  # Adjust this path to match the actual path of your control panel
+
+# Optimization for Google Ads Bot
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google
+
+# Block PetalBot
+User-agent: PetalBot
+Disallow: /
+
+# Crawl delay for overly enthusiastic bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+Sitemap: https://csc-fron-end.vercel.app/sitemap.xml
+
+# Auto generated, go to SEO Tools > Robots.txt Editor to change this
