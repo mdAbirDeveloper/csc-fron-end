@@ -19,7 +19,7 @@ const Navber = () => {
   }, [router.asPath]);
 
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = "+8801832822560";
+    const phoneNumber = "+8801111111111";
     let url;
 
     if (isMobile) {

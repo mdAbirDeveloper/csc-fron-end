@@ -11,7 +11,7 @@ const Home = () => {
   const router = useRouter();
 
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = '+8801832822560';
+    const phoneNumber = '+8801111111111';
     let url;
 
     // Check if the user is on a mobile device
