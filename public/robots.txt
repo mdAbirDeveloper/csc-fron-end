@@ -3,7 +3,7 @@ Allow: /
 
 User-agent: Googlebot
 Allow: /
-Disallow: /deshboard/  # Adjust this path to match the actual path of your control panel
+Disallow: /deshboard/
 
 # Optimization for Google Ads Bot
 User-agent: AdsBot-Google-Mobile
