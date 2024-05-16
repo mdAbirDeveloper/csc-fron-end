@@ -1,31 +1,44 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 const index = ({ data }) => {
   return (
-    <div className=" min-h-screen mt-20 mx-auto" style={{ maxWidth: "1200px" }}>
-      <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4 mx-auto">
-        {data.map((filter) => (
-          <>
-            <div>
-              <div className="card bg-base-100 shadow-xl">
-                <figure>
-                  <img src={filter?.images[0]} alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="text-center text-xl font-bold font-serif">{filter?.name}</h2>
-                  <p></p>
-                  <div className="card-actions justify-center">
-                    <Link href={`/components/filter/${filter._id}`}>
-                      <button className="btn btn-primary">انظر التفاصيل</button>
-                    </Link>
+    <div>
+      <Head>
+        <title>مرشحات عالية الجودة لأنظمة الضباب والضباب في المدينة</title>
+      </Head>
+      <div
+        className=" min-h-screen mt-20 mx-auto"
+        style={{ maxWidth: "1200px" }}
+      >
+        <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4 mx-auto">
+          {data.map((filter) => (
+            <>
+              <div>
+                <div className="card bg-base-100 shadow-xl">
+                  <figure>
+                    <img src={filter?.images[0]} alt="Shoes" />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="text-center text-xl font-bold font-serif">
+                      {filter?.name}
+                    </h2>
+                    <p></p>
+                    <div className="card-actions justify-center">
+                      <Link href={`/components/filter/${filter._id}`}>
+                        <button className="btn btn-primary">
+                          انظر التفاصيل
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );

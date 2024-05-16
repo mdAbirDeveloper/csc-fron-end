@@ -1,10 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 const index = ({ data }) => {
   return (
-    <div className=" min-h-screen mt-20  mx-auto" style={{ maxWidth: "1200px" }}>
+    <dvi>
+      <Head>
+        <title>مضخات قوية للتشغيل الموثوق في أنظمة الضباب بالمدينة</title>
+      </Head>
+      <div className=" min-h-screen mt-20  mx-auto" style={{ maxWidth: "1200px" }}>
       <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-4 mx-auto">
         {data.map((fogAndMistPumps) => (
           <>
@@ -28,6 +33,7 @@ const index = ({ data }) => {
         ))}
       </div>
     </div>
+    </dvi>
   );
 };
 

@@ -4,13 +4,19 @@ import React from "react";
 const index = () => {
   return (
     <div>
-      <div style={{maxWidth: '1200px',}} className="mx-auto mt-20">
+      <Head>
+        <title>احصل على إجابات سريعة: استكشف بنك الأسئلة الجاهز لدينا</title>
+      </Head>
+      <div style={{ maxWidth: "1200px" }} className="mx-auto mt-20">
         <div className="mb-20">
           <h2 className="text-right text-4xl font-bold font-serif">
             أسئلة شائعة حول كيفية تنقية الهواء وتحسين جودته
           </h2>
           <div>
-          <div style={{borderTop: '1px solid gray'}} className=" opacity-60 mt-8"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60 mt-8"
+            ></div>
 
             <div
               tabIndex={0}
@@ -36,7 +42,10 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60"
+            ></div>
 
             <div
               tabIndex={0}
@@ -61,7 +70,10 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60"
+            ></div>
 
             <div
               tabIndex={0}
@@ -94,7 +106,10 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60"
+            ></div>
 
             <div
               tabIndex={0}
@@ -119,7 +134,10 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60"
+            ></div>
 
             <div
               tabIndex={0}
@@ -135,7 +153,10 @@ const index = () => {
                 </p>
               </div>
             </div>
-            <div style={{borderTop: '1px solid gray'}} className=" opacity-60"></div>
+            <div
+              style={{ borderTop: "1px solid gray" }}
+              className=" opacity-60"
+            ></div>
 
             <div
               tabIndex={0}

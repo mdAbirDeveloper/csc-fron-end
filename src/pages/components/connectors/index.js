@@ -1,10 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 const index = ({ data }) => {
   return (
-    <div className="min-h-screen my-8 mx-auto mt-20" style={{ maxWidth: "1200px" }}>
+    <div>
+      <Head>
+        <title>موصلات فعالة وموثوقة لتلبية جميع احتياجاتك</title>
+      </Head>
+      <div className="min-h-screen my-8 mx-auto mt-20" style={{ maxWidth: "1200px" }}>
       <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 gap-6">
         {data.map((connectors) => (
           <>
@@ -27,6 +32,7 @@ const index = ({ data }) => {
           </>
         ))}
       </div>
+    </div>
     </div>
   );
 };

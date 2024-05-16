@@ -6,6 +6,11 @@ import React from "react";
 const index = ({ data }) => {
   return (
     <div>
+      <Head>
+        <title>
+          اكتشف حلول الجودة التي تلبي احتياجاتك: استكشف مجموعة منتجاتنا
+        </title>
+      </Head>
       <div
         style={{ maxWidth: "1300px" }}
         className=" min-h-screen my-8 mt-20 mx-auto"
