@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en" dir="rtl">
       <Head>
         {/* Add the meta tags and link tag */}
+        <meta name="google-site-verification" content="NIpTXcnBzxaHTqTuLbn2zGZ_xzO1hOB2X_Ouf3vEQfo" />
         <link
           rel="icon"
           href="https://cdn.wegic.ai/assets/onepage/thread/icon/35eadb21-f653-4d40-b4f0-fb96d17d3bd3.png"
